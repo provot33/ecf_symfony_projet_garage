@@ -1,0 +1,356 @@
+-- ------------- TABLE DU PERSONNEL ---------------
+
+CREATE TABLE IF NOT EXISTS PERSONNEL(
+   IDENTIFIANT 			INT 		NOT NULL UNIQUE PRIMARY KEY,
+   NOM 					VARCHAR(50) NOT NULL,
+   PRENOM 				VARCHAR(50) NOT NULL,
+   ADRESSE_COURRIEL 	VARCHAR(50) NOT NULL,
+   MOT_DE_PASSE			VARCHAR(50) NOT NULL,
+   EST_ADMINISTRATEUR	BOOLEAN		NOT NULL DEFAULT FALSE
+);
+
+-- Insertion des données
+
+INSERT INTO PERSONNEL
+VALUES (1, "Parrot", "Vincent", "v.parrot@garage.parrot.fr", "ChangeOnInstall", true);
+
+INSERT INTO PERSONNEL
+VALUES (2, "Dupont", "Jose", "j.dupont@garage.parrot.fr", "ChangeOnInstall", false);
+
+INSERT INTO PERSONNEL
+VALUES (3, "Iourive", "Kenny", "k.iourive@garage.parrot.fr", "ChangeOnInstall", false);
+
+INSERT INTO PERSONNEL
+VALUES (4, "Hingue", "Carla", "c.hingue@garage.parrot.fr", "ChangeOnInstall", false);
+
+INSERT INTO PERSONNEL
+VALUES (5, "Heinchtaine", "Albert", "a.heinchtaine@garage.parrot.fr", "ChangeOnInstall", false);
+
+-- Permet d'avoir la description de la table créée
+-- DESC PERSONNEL;
+
+-- Affiche le contenu de la table
+-- SELECT * FROM PERSONNEL;
+
+-- Supprime la table
+-- DROP TABLE PERSONNEL;
+
+-- ------------- TABLE DES VEHICULES ---------------
+
+CREATE TABLE IF NOT EXISTS VEHICULE(
+   IDENTIFIANT			INT			NOT NULL UNIQUE PRIMARY KEY,
+   MODELE				VARCHAR(50)	NOT NULL,
+   PRIX 				INT 		NOT NULL,
+   KIOMETRAGE			INT			NOT NULL,
+   ANNEE 				SMALLINT	NOT NULL,
+   NOMBRE_DE_PORTES 	TINYINT		NOT NULL,
+   URLMINIATURE 		VARCHAR(50)	NOT NULL,
+   MISE_EN_AVANT1 		VARCHAR(50)	NOT NULL,
+   MISE_EN_AVANT2 		VARCHAR(50)	NOT NULL,
+   MISE_EN_AVANT3 		VARCHAR(50)	NOT NULL,
+   MISE_EN_AVANT4 		VARCHAR(50),
+   MISE_EN_AVANT5		VARCHAR(50)
+);
+
+-- Insertion des données
+   
+-- INSERT INTO VEHICULE
+-- VALUES (1,);
+
+-- INSERT INTO VEHICULE
+-- VALUES (2,);
+
+-- INSERT INTO VEHICULE
+-- VALUES (3, );
+
+-- INSERT INTO VEHICULE
+-- VALUES (4, );
+
+-- INSERT INTO VEHICULE
+-- VALUES (5, );
+
+-- INSERT INTO VEHICULE
+-- VALUES (6, );
+
+-- INSERT INTO VEHICULE
+-- VALUES (7, );
+
+-- INSERT INTO VEHICULE
+-- VALUES (8,);
+
+-- INSERT INTO VEHICULE
+-- VALUES (9, );
+
+-- INSERT INTO VEHICULE
+-- VALUES (10,);
+
+-- Permet d'avoir la description de la table créée
+-- DESC VEHICULE;
+
+-- Affiche le contenu de la table
+-- SELECT * FROM VEHICULE;
+
+-- Supprime la table
+-- DROP TABLE VEHICULE;
+
+-- ------------- TABLE DETAIL DES VEHICULES ---------------
+
+CREATE TABLE IF NOT EXISTS DETAIL_VEHICULE(
+   IDENTIFIANT			INT			NOT NULL UNIQUE PRIMARY KEY,
+   EQUIPEMENT1			VARCHAR(60) NOT NULL,
+   EQUIPEMENT2			VARCHAR(60) NOT NULL,
+   EQUIPEMENT3			VARCHAR(60) NOT NULL,
+   EQUIPEMENT4			VARCHAR(60) NOT NULL,
+   EQUIPEMENT5			VARCHAR(60) NOT NULL,
+   EQUIPEMENT6			VARCHAR(60),
+   EQUIPEMENT7			VARCHAR(60),
+   EQUIPEMENT8			VARCHAR(60),
+   EQUIPEMENT9			VARCHAR(60),
+   EQUIPEMENT10			VARCHAR(60),
+   COMMENTAIRE_VEHICULE	TEXT NOT NULL,
+   FOREIGN KEY (IDENTIFIANT)
+   REFERENCES VEHICULE(IDENTIFIANT)
+   ON DELETE CASCADE
+);
+
+-- Insertion des données
+
+-- INSERT INTO DETAIL_VEHICULE
+-- VALUES (1,);
+
+-- INSERT INTO DETAIL_VEHICULE
+-- VALUES (2,);
+
+-- INSERT INTO DETAIL_VEHICULE
+-- VALUES (3, );
+
+-- INSERT INTO DETAIL_VEHICULE
+-- VALUES (4, );
+
+-- INSERT INTO DETAIL_VEHICULE
+-- VALUES (5, );
+
+-- INSERT INTO DETAIL_VEHICULE
+-- VALUES (6, );
+
+-- INSERT INTO DETAIL_VEHICULE
+-- VALUES (7, );
+
+-- INSERT INTO DETAIL_VEHICULE
+-- VALUES (8,);
+
+-- INSERT INTO DETAIL_VEHICULE
+-- VALUES (9, );
+
+-- INSERT INTO DETAIL_VEHICULE
+-- VALUES (10,);
+
+-- Permet d'avoir la description de la table créée
+-- DESC DETAIL_VEHICULE;
+
+-- Affiche le contenu de la table
+-- SELECT * FROM DETAIL_VEHICULE;
+
+-- Supprime la table
+-- DROP TABLE DETAIL_VEHICULE;
+
+-- ------------- TABLE VISUEL DES VEHICULES ---------------
+
+CREATE TABLE IF NOT EXISTS VISUEL_VEHICULE(
+   IDENTIFIANT			  INT			NOT NULL UNIQUE PRIMARY KEY,
+   IDENTIFIANT_VEHICULE   int			NOT NULL,
+   URL_VISUEL             VARCHAR(60)	NOT NULL,
+   FOREIGN KEY (IDENTIFIANT_VEHICULE)
+   REFERENCES DETAIL_VEHICULE(IDENTIFIANT)
+   ON DELETE CASCADE
+);
+
+-- Insertion des données
+
+-- INSERT INTO VISUEL_VEHICULE
+-- VALUES (1, 1,);
+
+-- INSERT INTO VISUEL_VEHICULE
+-- VALUES (2, 1,);
+
+-- INSERT INTO VISUEL_VEHICULE
+-- VALUES (3, 1,);
+
+-- INSERT INTO VISUEL_VEHICULE
+-- VALUES (4, 1,);
+
+-- INSERT INTO VISUEL_VEHICULE
+-- VALUES (5, 1,);
+
+-- INSERT INTO VISUEL_VEHICULE
+-- VALUES (6, 2,);
+
+-- INSERT INTO VISUEL_VEHICULE
+-- VALUES (7, 2, );
+
+-- Permet d'avoir la description de la table créée
+-- DESC VISUEL_VEHICULE;
+
+-- Affiche le contenu de la table
+-- SELECT * FROM VISUEL_VEHICULE;
+
+-- Supprime la table
+-- DROP TABLE VISUEL_VEHICULE;
+
+-- ------------- TABLE CONTENU DU SITE ---------------
+
+CREATE TABLE IF NOT EXISTS CONTENU_SITE(
+   IDENTIFIANT								INT			NOT NULL UNIQUE PRIMARY KEY,
+   ZONE_SITE1								TEXT		NOT NULL,
+   ZONE_SITE2								TEXT		NOT NULL,
+   ZONE_SITE3								TEXT		NOT NULL,
+   ZONE_SITE4								TEXT		NOT NULL,
+   HORAIRE_OUVERTURE_LUNDI_MATIN			TIME		NOT NULL,
+   HORAIRE_OUVERTURE_LUNDI_APRES_MIDI		TIME		NOT NULL,
+   HORAIRE_OUVERTURE_MARDI_MATIN			TIME		NOT NULL,
+   HORAIRE_OUVERTURE_MARDI_APRES_MIDI		TIME		NOT NULL,
+   HORAIRE_OUVERTURE_MERCREDI_MATIN			TIME		NOT NULL,
+   HORAIRE_OUVERTURE_MERCREDI_APRES_MIDI	TIME		NOT NULL,
+   HORAIRE_OUVERTURE_JEUDI_MATIN			TIME		NOT NULL,
+   HORAIRE_OUVERTURE_JEUDI_APRES_MIDI		TIME		NOT NULL,
+   HORAIRE_OUVERTURE_VENDREDI_MATIN			TIME		NOT NULL,
+   HORAIRE_OUVERTURE_VENDREDI_APRES_MIDI	TIME		NOT NULL,
+   HORAIRE_OUVERTURE_SAMEDI_MATIN			TIME		NOT NULL,
+   HORAIRE_OUVERTURE_SAMEDI_APRES_MIDI		TIME		NOT NULL,
+   HORAIRE_OUVERTURE_DIMANCHE_MATIN			TIME		NOT NULL,
+   HORAIRE_OUVERTURE_DIMANCHE_APRES_MIDI	TIME		NOT NULL,
+   TELEPHONE								VARCHAR(50) NOT NULL,
+   ADRESSE_RUE1								VARCHAR(20) NOT NULL,
+   ADRESSE_RUE2								VARCHAR(50) NOT NULL,
+   CODE_POSTAL								INT         NOT NULL,
+   VILLE									VARCHAR(50)	NOT NULL
+);
+
+-- Insertion des données
+-- INSERT INTO CONTENU_SITE
+-- VALUES (1,);
+
+-- INSERT INTO CONTENU_SITE
+-- VALUES (2,);
+
+-- INSERT INTO CONTENU_SITE
+-- VALUES (3, );
+
+-- INSERT INTO CONTENU_SITE
+-- VALUES (4, );
+
+-- INSERT INTO CONTENU_SITE
+-- VALUES (5, );
+
+-- INSERT INTO CONTENU_SITE
+-- VALUES (6, );
+
+-- INSERT INTO CONTENU_SITE
+-- VALUES (7, );
+
+-- INSERT INTO CONTENU_SITE
+-- VALUES (8, );
+
+-- INSERT INTO CONTENU_SITE
+-- VALUES (9, );
+
+-- INSERT INTO CONTENU_SITE
+-- VALUES (10, );
+
+-- INSERT INTO CONTENU_SITE
+-- VALUES (11, );
+
+-- INSERT INTO CONTENU_SITE
+-- VALUES (12, );
+
+-- INSERT INTO CONTENU_SITE
+-- VALUES (13, );
+
+-- INSERT INTO CONTENU_SITE
+-- VALUES (14, );
+
+-- INSERT INTO CONTENU_SITE
+-- VALUES (15, );
+
+-- INSERT INTO CONTENU_SITE
+-- VALUES (16, );
+
+-- INSERT INTO CONTENU_SITE
+-- VALUES (17, );
+
+-- INSERT INTO CONTENU_SITE
+-- VALUES (18, );
+
+-- INSERT INTO CONTENU_SITE
+-- VALUES (19, );
+
+-- Permet d'avoir la description de la table créée
+-- DESC CONTENU_SITE;
+
+-- Affiche le contenu de la table
+-- SELECT * FROM CONTENU_SITE;
+
+-- Supprime la table
+-- DROP TABLE CONTENU_SITE;
+
+-- ------------- TABLE COMMENTAIRES ---------------
+
+   CREATE TABLE IF NOT EXISTS COMMENTAIRES(
+   IDENTIFIANT					INT			NOT NULL UNIQUE PRIMARY KEY,
+   NOM_AUTEUR_COMMENTAIRE		VARCHAR(50)	NOT NULL,         
+   PRENOM_AUTEUR_COMMENTAIRE	VARCHAR(50)	NOT NULL, 
+   COURRIEL_AUTEUR				VARCHAR(50)	NOT NULL,
+   NIVEAU_SATISFACTION			INT 		NOT NULL,
+   TEXTE_COMMENTAIRE			TEXT		NOT NULL,
+   EST_VALIDE					BOOLEAN		NOT NULL DEFAULT FALSE
+);
+   
+-- Insertion des données
+INSERT INTO COMMENTAIRES
+VALUES (1, "José", "Garcia", "jose.garcia@yahoo.fr", "Très satisfait de ce garage. Equipe au top", true );
+
+INSERT INTO COMMENTAIRES
+VALUES (2, "Caroline", "Petit", "c.petit@free.fr", "Je recommande ce garage. Ma voiture a été réoarée très rapidement", true );
+
+INSERT INTO COMMENTAIRES
+VALUES (3, "Robert", "Dubard", "robert.dubard@orange.fr", "Satisfait, rapide et pas trop cher.", true);
+
+-- Permet d'avoir la description de la table créée
+-- DESC COMMENTAIRES;
+
+-- Affiche le contenu de la table
+-- SELECT * FROM COMMENTAIRES;
+
+-- Supprime la table
+-- DROP TABLE COMMENTAIRES;
+
+-- ------------- TABLE CONTENU DU SITE ---------------
+-- Création de la table
+   CREATE TABLE IF NOT EXISTS FORMULAIRE_CONTACT(
+   IDENTIFIANT			    VARCHAR(50)	NOT NULL UNIQUE PRIMARY KEY,
+   NOM_AUTEUR_              VARCHAR(50)	NOT NULL,      
+   PRENOM_AUTEUR            VARCHAR(50) NOT NULL,
+   COURRIEL_AUTEUR          VARCHAR(50) NOT NULL,
+   TEXTE_FORMULAIRE         TEXT		NOT NULL,
+   A_ETE_TRAITE             BOOLEAN		NOT NULL DEFAULT FALSE
+   );
+  
+ -- Insertion des données
+-- INSERT INTO FORMULAIRE_CONTACT
+-- VALUES (1, "José", "Garcia", "jose.garcia@yahoo.fr", "Très satisfait de ce garage. Equipe au top", true );
+
+-- INSERT INTO FORMULAIRE_CONTACT
+-- VALUES (2, "Caroline", "Petit", "c.petit@free.fr", "Je recommande ce garage. Ma voiture a été réoarée très rapidement", true );
+
+-- INSERT INTO FORMULAIRE_CONTACT
+-- VALUES (3, "Robert", "Dubard", "robert.dubard@orange.fr", "Satisfait, rapide et pas trop cher.", true);
+
+-- Permet d'avoir la description de la table créée
+-- DESC FORMULAIRE_CONTACT;
+
+-- Affiche le contenu de la table
+-- SELECT * FROM FORMULAIRE_CONTACT;
+
+-- Supprime la table
+-- DROP TABLE FORMULAIRE_CONTACT;
+   
