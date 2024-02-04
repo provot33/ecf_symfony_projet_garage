@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/connexiondb.php';
@@ -108,12 +108,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/connexiondb.php';
                   </div>
           </form method="post">
         </div>
-        <?php
-        include($_SERVER['DOCUMENT_ROOT'] . '/html/footer.html');
-        ?>
-        <?php
-        include($_SERVER['DOCUMENT_ROOT'] . '/html/script.html');
-        ?>
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/footer.php';
+?>
+<?php
+include($_SERVER['DOCUMENT_ROOT'] . '/html/script.html');
+?>
 </body>
 
 </html>

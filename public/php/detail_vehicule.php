@@ -26,33 +26,29 @@ include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/connexiondb.php';
 </head>
 
 <body>
-    <?php
-    include($_SERVER['DOCUMENT_ROOT'] . '/html/header.html');
-    ?>
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/html/header.html';
+?>
     <main>
         <!-- Slideshow container -->
         <div class="slideshow-container">
             <!-- Full-width images with number and caption text -->
-            <div class="mySlides fade">
-                <div class="numbertext">1 / 5</div>
-                <img class="photo" src="/assets/photo voiture à vendre/voiture mustang/mustang2.jpg" />
-            </div>
-            <div class="mySlides fade">
-                <div class="numbertext">2 / 5</div>
-                <img class="photo" src="/assets/photo voiture à vendre/voiture mustang/mustang1.jpg" />
-            </div>
-            <div class="mySlides fade">
-                <div class="numbertext">3 / 5</div>
-                <img class="photo" src="/assets/photo voiture à vendre/voiture mustang/mustang3.jpg" />
-            </div>
-            <div class="mySlides fade">
-                <div class="numbertext">4 / 5</div>
-                <img class="photo" src="/assets/photo voiture à vendre/voiture mustang/mustang4.jpg" />
-            </div>
-            <div class="mySlides fade">
-                <div class="numbertext">5 / 5</div>
-                <img class="photo" src="/assets/photo voiture à vendre/voiture mustang/mustang5.jpg" />
-            </div>
+<?php
+$nbPhotos = 0;
+try {
+    $i = 1;
+    $results = $pdo->query("SELECT URL_VISUEL FROM VISUEL_VEHICULE WHERE IDENTIFIANT_VEHICULE = {$_GET['vehicule']}", PDO::FETCH_ASSOC); 
+    $nbPhotos = $results->rowCount();
+    foreach ($results as $visuel) {
+        echo '<div class="mySlides fade"><div class="numbertext">';
+        echo $i.' / '.$nbPhotos.'</div><img class="photo" src="';
+        echo $visuel['URL_VISUEL'].'" /></div>';
+        $i++;
+    }
+} catch (PDOException $e) {
+
+}
+?>            
             <!-- Next and previous buttons -->
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -61,11 +57,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/connexiondb.php';
 
         <!-- The dots/circles -->
         <div class="div_center">
-            <span class="dot dot-actif" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-            <span class="dot" onclick="currentSlide(4)"></span>
-            <span class="dot" onclick="currentSlide(5)"></span>
+<?php 
+    echo '<span class="dot dot-actif" onclick="currentSlide(1)"></span>';
+    for ($i = 2; $i <= $nbPhotos; $i++ ){
+        echo '<span class="dot" onclick="currentSlide('.$i.')"></span>';
+    }
+?>
         </div>
 
         <div class="div_center div_pane">
@@ -107,12 +104,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/connexiondb.php';
         </div>
     </main>
     <hr />
-    <?php
-    include($_SERVER['DOCUMENT_ROOT'] . '/html/footer.html');
-    ?>
-    <?php
-    include($_SERVER['DOCUMENT_ROOT'] . '/html/script.html');
-    ?>
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/footer.php';
+?>
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/html/script.html';
+?>
     <script src="/js/slideshow.js"></script>
     <script src="/js/tab.js"></script>
     <script src="/node_modules/bootstrap/js/src/tab.js"></script>

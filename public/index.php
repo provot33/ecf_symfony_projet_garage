@@ -24,7 +24,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/connexiondb.php';
 </head>
 
 <body>
-<?php
+    <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/html/header.html';
 ?>
 
@@ -46,8 +46,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/html/header.html';
                 <img class="texte_img" src="assets\photo voiture à vendre\cleaning-1837331_640.jpg" alt="bras d'un garagiste qui s'occupe de la carrosserie d'une voiture">
             </div>
         </div>
-        <P>Notre équipe de carrossiers passionnés possède une connaissance approfondie de tous les types de véhicules,
-            assurant ainsi une réparation de première classe pour votre voiture. </P>
+        <p>Notre équipe de carrossiers passionnés possède une connaissance approfondie de tous les types de véhicules,
+            assurant ainsi une réparation de première classe pour votre voiture. </p>
         <div class="prestations">
             <ul>
                 <li> Du léger enfoncement à la restructuration de l'auto sur marbre</li>
@@ -60,8 +60,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/html/header.html';
             </div>
         </div>
 
-        <P> Nous prenons en charge toutes les marques de véhicules et offrons des prestations d’entretien et de la
-            mécanique auto et de rénovation.</P>
+        <p> Nous prenons en charge toutes les marques de véhicules et offrons des prestations d’entretien et de la
+            mécanique auto et de rénovation.</p>
         <p>De plus, nous proposons également une location de voitures de courtoisie pour minimiser les perturbations
             pendant les périodes d’entretien. Choisissez notre service pour une expérience professionnelle hors pair
             dans le domaine de la carrosserie</p>
@@ -71,10 +71,13 @@ include $_SERVER['DOCUMENT_ROOT'] . '/html/header.html';
         <p> Envie de changer de voiture: notre garage vous propose des voitures d'occasion entiérement contrôlés avant
             la vente, gage de notre sérieux et de nos prestations de qualité</p>
         <img src="assets\photo voiture à vendre\ai-generated-8367769_640.jpg" alt=" homme qui se penche sur une voiture ancienne">
-        <P> Prenez contact par téléphone ou via notre formulaire pour un devis, une voiture qui vous interesse ou un
-            tarif</P>
-        <div class=" div_center"><a href="/php/formulaires_de_contact_et_avis.php"><button>Cliquez
-                    ici</button></a></div>
+        <p> Prenez contact par téléphone ou via notre formulaire pour un devis, une voiture qui vous interesse ou un
+            tarif</p>
+        <div class=" div_center">
+            <a href="/php/formulaires_de_contact_et_avis.php">
+                <button>Cliquez ici</button>
+            </a>
+        </div>
 
     </main>
     <section>
