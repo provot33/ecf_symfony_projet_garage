@@ -21,8 +21,8 @@
 
 <body>
     <?php
-    include($_SERVER['DOCUMENT_ROOT'] . '/html/header.html');
-    ?>
+include $_SERVER['DOCUMENT_ROOT'] . '/html/header.html';
+?>
 
     <main>
         <h1> Un service de carrosserie de premier ordre </h1>
@@ -72,6 +72,22 @@
         <div class=" div_center"><a href="/php/formulaires_de_contact_et_avis.php"><button>Cliquez
                     ici</button></a></div>
 
+<?php
+/* Connexion à une base MySQL avec l'invocation de pilote */
+$dsn = 'mysql:dbname=mon_projet_garage;host=127.0.0.1;port=3306';
+$user = 'root';
+$password = '';
+
+try {
+    $pdo = new PDO($dsn, $user, $password);
+    foreach ($pdo->query('SELECT NOM, ADRESSE_COURRIEL FROM PERSONNEL', PDO::FETCH_ASSOC) as $personnel) {
+        echo $personnel['NOM'] . ' ' . $personnel['ADRESSE_COURRIEL'] . '<br>';
+    }
+} catch (PDOException $e) {
+    echo 'Impossible de récupérer la liste des utilisateurs';
+}
+?>
+
     </main>
     <section>
         <div>
@@ -100,13 +116,13 @@
     </section>
     <hr>
 
-    <?php
-    include($_SERVER['DOCUMENT_ROOT'] . '/html/footer.html');
-    ?>
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/footer.php';
+?>
 
-    <?php
-    include($_SERVER['DOCUMENT_ROOT'] . '/html/script.html');
-    ?>
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/html/script.html';
+?>
 </body>
 
 </html>

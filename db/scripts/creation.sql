@@ -1,3 +1,6 @@
+-- ------------- BASE DE DONNEES ------------------
+CREATE SCHEMA IF NOT EXISTS MON_PROJET_GARAGE;
+
 -- ------------- TABLE DU PERSONNEL ---------------
 
 CREATE TABLE IF NOT EXISTS PERSONNEL(
@@ -197,6 +200,28 @@ CREATE TABLE IF NOT EXISTS VISUEL_VEHICULE(
 -- Supprime la table
 -- DROP TABLE VISUEL_VEHICULE;
 
+-- ------------- TABLE CORDONNEES ---------------
+CREATE TABLE IF NOT EXISTS COORDONNEES(
+   IDENTIFIANT								INT			NOT NULL UNIQUE PRIMARY KEY,
+   TELEPHONE								VARCHAR(14) NOT NULL,
+   ADRESSE_RUE1								VARCHAR(50) NOT NULL,
+   ADRESSE_RUE2								VARCHAR(50) NOT NULL,
+   CODE_POSTAL								INT         NOT NULL,
+   VILLE									VARCHAR(50)	NOT NULL
+);
+
+INSERT INTO COORDONNEES
+VALUES (1, '0970543233', '220 chemin long', '', 31004, 'Toulouse');
+
+-- Permet d'avoir la description de la table créée
+-- DESC CONTENU_SITE;
+
+-- Affiche le contenu de la table
+-- SELECT * FROM CONTENU_SITE;
+
+-- Supprime la table
+-- DROP TABLE CONTENU_SITE;
+
 -- ------------- TABLE CONTENU DU SITE ---------------
 
 CREATE TABLE IF NOT EXISTS CONTENU_SITE(
@@ -227,6 +252,18 @@ CREATE TABLE IF NOT EXISTS CONTENU_SITE(
 );
 
 -- Insertion des données
+
+-- INSERT INTO CONTENU_SITE (
+-- HORAIRE_OUVERTURE_LUNDI_MATIN, HORAIRE_OUVERTURE_LUNDI_APRES_MIDI, 
+-- HORAIRE_OUVERTURE_MARDI_MATIN, HORAIRE_OUVERTURE_MARDI_APRES_MIDI,
+-- HORAIRE_OUVERTURE_MERCREDI_MATIN, HORAIRE_OUVERTURE_MERCREDI_APRES_MIDI,
+-- HORAIRE_OUVERTURE_JEUDI_MATIN, HORAIRE_OUVERTURE_JEUDI_APRES_MIDI ...)
+-- VALUES (value1, value2, value3, ...);
+
+-- UPDATE CONTENU_SITE
+-- SET column1 = value1, column2 = value2, ...
+-- WHERE condition; 
+
 -- INSERT INTO CONTENU_SITE
 -- VALUES (1,);
 
@@ -307,13 +344,13 @@ CREATE TABLE IF NOT EXISTS CONTENU_SITE(
    
 -- Insertion des données
 INSERT INTO COMMENTAIRES
-VALUES (1, "José", "Garcia", "jose.garcia@yahoo.fr", "Très satisfait de ce garage. Equipe au top", true );
+VALUES (1, "Garcia", "José", "jose.garcia@yahoo.fr", 5, "Très satisfait de ce garage. Equipe au top", true );
 
 INSERT INTO COMMENTAIRES
-VALUES (2, "Caroline", "Petit", "c.petit@free.fr", "Je recommande ce garage. Ma voiture a été réoarée très rapidement", true );
+VALUES (2, "Petit", "Caroline", "c.petit@free.fr", 5, "Je recommande ce garage. Ma voiture a été réoarée très rapidement", true );
 
 INSERT INTO COMMENTAIRES
-VALUES (3, "Robert", "Dubard", "robert.dubard@orange.fr", "Satisfait, rapide et pas trop cher.", true);
+VALUES (3, "Dubard", "Robert", "robert.dubard@orange.fr", 4, "Satisfait, rapide et pas trop cher.", true);
 
 -- Permet d'avoir la description de la table créée
 -- DESC COMMENTAIRES;
@@ -324,7 +361,7 @@ VALUES (3, "Robert", "Dubard", "robert.dubard@orange.fr", "Satisfait, rapide et 
 -- Supprime la table
 -- DROP TABLE COMMENTAIRES;
 
--- ------------- TABLE CONTENU DU SITE ---------------
+-- ------------- TABLE FORMULAIRE DE CONTACT ---------------
 -- Création de la table
    CREATE TABLE IF NOT EXISTS FORMULAIRE_CONTACT(
    IDENTIFIANT			    VARCHAR(50)	NOT NULL UNIQUE PRIMARY KEY,
