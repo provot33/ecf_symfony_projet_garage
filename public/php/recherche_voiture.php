@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/connexiondb.php';
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,8 +26,8 @@
 
 <body>
     <?php
-    include($_SERVER['DOCUMENT_ROOT'] . '/html/header.html');
-    ?>
+include $_SERVER['DOCUMENT_ROOT'] . '/html/header.html';
+?>
     <main>
         <H1> Nos offres de véhicules d'occasion du moment:</H1>
         <div>
@@ -224,12 +228,12 @@
             </a>
         </div> -->
     </main>
-    <?php
-    include($_SERVER['DOCUMENT_ROOT'] . '/html/footer.html');
-    ?>
-    <?php
-    include($_SERVER['DOCUMENT_ROOT'] . '/html/script.html');
-    ?>
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/footer.php';
+?>
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/html/script.html';
+?>
 </body>
 
 </html>

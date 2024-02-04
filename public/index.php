@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/connexiondb.php';
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +24,7 @@
 </head>
 
 <body>
-    <?php
+<?php
 include $_SERVER['DOCUMENT_ROOT'] . '/html/header.html';
 ?>
 
@@ -71,22 +75,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/html/header.html';
             tarif</P>
         <div class=" div_center"><a href="/php/formulaires_de_contact_et_avis.php"><button>Cliquez
                     ici</button></a></div>
-
-<?php
-/* Connexion à une base MySQL avec l'invocation de pilote */
-$dsn = 'mysql:dbname=mon_projet_garage;host=127.0.0.1;port=3306';
-$user = 'root';
-$password = '';
-
-try {
-    $pdo = new PDO($dsn, $user, $password);
-    foreach ($pdo->query('SELECT NOM, ADRESSE_COURRIEL FROM PERSONNEL', PDO::FETCH_ASSOC) as $personnel) {
-        echo $personnel['NOM'] . ' ' . $personnel['ADRESSE_COURRIEL'] . '<br>';
-    }
-} catch (PDOException $e) {
-    echo 'Impossible de récupérer la liste des utilisateurs';
-}
-?>
 
     </main>
     <section>
