@@ -171,28 +171,66 @@ VALUES (1, 'Equipement1', 'Equipement2', 'Equipement3', 'Equipement4', 'Equipeme
 CREATE TABLE IF NOT EXISTS VISUEL_VEHICULE(
    IDENTIFIANT			  INT			NOT NULL UNIQUE PRIMARY KEY,
    IDENTIFIANT_VEHICULE   int			NOT NULL,
-   URL_VISUEL             VARCHAR(60)	NOT NULL,
+   URL_VISUEL             VARCHAR(150)	NOT NULL,
    FOREIGN KEY (IDENTIFIANT_VEHICULE)
    REFERENCES DETAIL_VEHICULE(IDENTIFIANT)
    ON DELETE CASCADE
 );
 
 -- Insertion des données
+INSERT INTO VISUEL_VEHICULE
+VALUES (1, 1, "/assets/photo voiture à vendre/opel/opel1.jpg");
 
-   INSERT INTO VISUEL_VEHICULE
-   VALUES (1, 1, "/assets/photo voiture à vendre/voiture mustang/mustang2.jpg");
+INSERT INTO VISUEL_VEHICULE
+VALUES (2, 1, "/assets/photo voiture à vendre/opel/opel2.jpg");
 
-   INSERT INTO VISUEL_VEHICULE
-   VALUES (2, 1, "/assets/photo voiture à vendre/voiture mustang/mustang1.jpg");
+INSERT INTO VISUEL_VEHICULE
+VALUES (3, 1, "/assets/photo voiture à vendre/opel/opel3.jpg");
 
-   INSERT INTO VISUEL_VEHICULE
-   VALUES (3, 1, "/assets/photo voiture à vendre/voiture mustang/mustang3.jpg");
+INSERT INTO VISUEL_VEHICULE
+VALUES (4, 1, "/assets/photo voiture à vendre/opel/opel4.jpg");
 
-   INSERT INTO VISUEL_VEHICULE
-   VALUES (4, 1, "/assets/photo voiture à vendre/voiture mustang/mustang4.jpg");
+INSERT INTO VISUEL_VEHICULE
+VALUES (5, 1, "/assets/photo voiture à vendre/opel/opel5.jpg");
 
-   INSERT INTO VISUEL_VEHICULE
-   VALUES (5, 1, "/assets/photo voiture à vendre/voiture mustang/mustang5.jpg");
+INSERT INTO VISUEL_VEHICULE
+VALUES (6, 2, "/assets/photo voiture à vendre/RENAULT CLIO ET MEGANE/MEGANE/megane1.jpg");
+
+INSERT INTO VISUEL_VEHICULE
+VALUES (7, 2, "/assets/photo voiture à vendre/RENAULT CLIO ET MEGANE/MEGANE/megane2.jpg");
+
+INSERT INTO VISUEL_VEHICULE
+VALUES (8, 2, "/assets/photo voiture à vendre/RENAULT CLIO ET MEGANE/MEGANE/megane3.jpg");
+
+INSERT INTO VISUEL_VEHICULE
+VALUES (9, 2, "/assets/photo voiture à vendre/RENAULT CLIO ET MEGANE/MEGANE/megane4.jpg");
+
+INSERT INTO VISUEL_VEHICULE
+VALUES (10, 3, "/assets/photo voiture à vendre/RENAULT CLIO ET MEGANE/CLIO/clio1.jpg");
+
+INSERT INTO VISUEL_VEHICULE
+VALUES (11, 3, "/assets/photo voiture à vendre/RENAULT CLIO ET MEGANE/CLIO/clio2.jpg");
+
+INSERT INTO VISUEL_VEHICULE
+VALUES (12, 3, "/assets/photo voiture à vendre/RENAULT CLIO ET MEGANE/CLIO/clio3.jpg");
+
+INSERT INTO VISUEL_VEHICULE
+VALUES (13, 3, "/assets/photo voiture à vendre/RENAULT CLIO ET MEGANE/CLIO/clio4.jpg");
+
+INSERT INTO VISUEL_VEHICULE
+VALUES (14, 3, "/assets/photo voiture à vendre/RENAULT CLIO ET MEGANE/CLIO/clio5.jpg");
+
+INSERT INTO VISUEL_VEHICULE
+VALUES (15, 4, "/assets/photo voiture à vendre/voiture a/audi 1.jpg");
+
+INSERT INTO VISUEL_VEHICULE
+VALUES (16, 4, "/assets/photo voiture à vendre/voiture a/audi 2.jpg");
+
+INSERT INTO VISUEL_VEHICULE
+VALUES (17, 4, "/assets/photo voiture à vendre/voiture a/audi 3.jpg");
+
+INSERT INTO VISUEL_VEHICULE
+VALUES (18, 4, "/assets/photo voiture à vendre/voiture a/audi 4.jpg");
 
 -- INSERT INTO VISUEL_VEHICULE
 -- VALUES (1, 1,);
