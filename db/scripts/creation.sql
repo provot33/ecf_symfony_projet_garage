@@ -506,16 +506,20 @@ VALUES (3, "Dubard", "Robert", "robert.dubard@orange.fr", 4, "Satisfait, rapide 
 
 -- ------------- TABLE FORMULAIRE DE CONTACT ---------------
 -- Création de la table
-   CREATE TABLE IF NOT EXISTS FORMULAIRE_CONTACT(
-   IDENTIFIANT			    VARCHAR(50)	NOT NULL UNIQUE PRIMARY KEY,
-   NOM_AUTEUR_              VARCHAR(50)	NOT NULL,      
+CREATE TABLE IF NOT EXISTS FORMULAIRE_CONTACT(
+   IDENTIFIANT			    INT	NOT NULL PRIMARY KEY AUTO_INCREMENT,
+   NOM_AUTEUR              VARCHAR(50)	NOT NULL,      
    PRENOM_AUTEUR            VARCHAR(50) NOT NULL,
    COURRIEL_AUTEUR          VARCHAR(50) NOT NULL,
+   TELEPHONE_AUTEUR         VARCHAR(10) NOT NULL,
+   ID_SUJET                  INT NOT NULL,
    TEXTE_FORMULAIRE         TEXT		NOT NULL,
-   A_ETE_TRAITE             BOOLEAN		NOT NULL DEFAULT FALSE
-   );
-  
- -- Insertion des données
+   A_ETE_TRAITE             BOOLEAN		NOT NULL DEFAULT FALSE,
+   FOREIGN KEY (ID_SUJET)
+   REFERENCES SUJET_CONTACT(IDENTIFIANT)
+);
+
+-- Insertion des données
 -- INSERT INTO FORMULAIRE_CONTACT
 -- VALUES (1, "José", "Garcia", "jose.garcia@yahoo.fr", "Très satisfait de ce garage. Equipe au top", true );
 
@@ -533,4 +537,24 @@ VALUES (3, "Dubard", "Robert", "robert.dubard@orange.fr", 4, "Satisfait, rapide 
 
 -- Supprime la table
 -- DROP TABLE FORMULAIRE_CONTACT;
-   
+
+-- ------------- TABLE SUJET DU CONTACT ---------------
+-- Création de la table
+CREATE TABLE IF NOT EXISTS SUJET_CONTACT(
+   IDENTIFIANT			    INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+   LIBELLE_SUJET              VARCHAR(50)	NOT NULL
+);
+
+-- Insertion des données
+INSERT INTO SUJET_CONTACT (LIBELLE_SUJET)
+VALUES ('Achat véhicule occasion'), ('Réparation carrosserie'), ('Réparation véhicule'), ('Demande de contrôle technique');
+
+INSERT INTO SUJET_CONTACT
+VALUES (2000000, 'Autre');
+-- VALUES (1, "José", "Garcia", "jose.garcia@yahoo.fr", "Très satisfait de ce garage. Equipe au top", true );
+
+
+-- ------------- TABLE CONTACT TRAITE PAR ---------------
+-- Création de la table
+--
+-- Rajouter une table pour faire le lien entre les salariés et les commentaires qu'ils ont traités

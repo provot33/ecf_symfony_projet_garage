@@ -13,15 +13,15 @@ include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/connexiondb.php';
 </head>
 
 <body>
-    <?php
-    include($_SERVER['DOCUMENT_ROOT'] . '/html/header.html');
-    ?>
-    <?php
-    include($_SERVER['DOCUMENT_ROOT'] . '/html/footer.html');
-    ?>
-    <?php
-    include($_SERVER['DOCUMENT_ROOT'] . '/html/script.html');
-    ?>
+<?php
+include($_SERVER['DOCUMENT_ROOT'] . '/html/header.html');
+?>
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/footer.php';
+?>
+<?php
+include($_SERVER['DOCUMENT_ROOT'] . '/html/script.html');
+?>
 </body>
 
 </html>
