@@ -33,7 +33,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/connexiondb.php';
 
   <main>
     <h1>Pour toute demande, veuillez nous contacter via notre formulaire de contact :</h1>
-    <form action="demande_contact.php" method="post">
+    <form id="contact_form" name="contact_form" method="post">
       <fieldset>
         <legend>Formulaire de contact</legend>
         <div class="formulaire_contact">
@@ -92,7 +92,10 @@ try {
           </div>
         </div>
         <div class="formulaire_contact">
-          <textarea name="message" id="message" rows="10" , cols="40">Mon message:</textarea>
+          <textarea name="message" id="message" rows="10" , cols="40" placeholder="Mon message :"></textarea>
+        </div>
+        <div class="formulaire_contact" id="formulaire_erreurs">
+
         </div>
         <div class="div_center">
           <button type="submit">Envoyer</button>
@@ -106,6 +109,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/footer.php';
 <?php
 include($_SERVER['DOCUMENT_ROOT'] . '/html/script.html');
 ?>
+<script src="/js/gestion_form.js"></script>
 </body>
 
 </html>
