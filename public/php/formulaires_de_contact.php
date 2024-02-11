@@ -97,7 +97,7 @@ try {
         <div class="formulaire_contact" id="formulaire_erreurs">
 
         </div>
-        <div class="div_center">
+        <div id="boutonEnvoyer" class="div_center">
           <button type="submit">Envoyer</button>
         </div>
       </fieldset>

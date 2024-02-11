@@ -74,7 +74,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/html/header.html';
         <p> Prenez contact par téléphone ou via notre formulaire pour un devis, une voiture qui vous interesse ou un
             tarif</p>
         <div class=" div_center">
-            <a href="/php/formulaires_de_contact_et_avis.php">
+            <a href="/php/formulaires_de_contact.php">
                 <button>Cliquez ici</button>
             </a>
         </div>

@@ -5,6 +5,7 @@ function resetErreurFormulaire() {
   document.getElementById("telephone").style.backgroundColor = "";
   document.getElementById("message").style.backgroundColor = "";
   document.getElementById("formulaire_erreurs").innerHTML = "";
+  document.getElementById("boutonEnvoyer").style.display= "block";
 }
 
 const regExprTelephone = /^0\d{9}$/;
@@ -61,15 +62,20 @@ form.addEventListener("submit", (event) => {
       body: formData,
     })
       .then((response) => {
+        alert (response.status);
         if (response.ok) {
-          alert("Reponse OK !");
           // Handle the successful response
+          document.getElementById("boutonEnvoyer").style.display= "none";
+          document.getElementById("formulaire_erreurs").innerHTML = "Le formulaire a été envoyée";
+          alert("Reponse OK !");
         } else {
+          document.getElementById("formulaire_erreurs").innerHTML = "Impossible de transférer le formulaire - Réessayer ulétrieurement";
           alert("Reponse KO !");
           // Handle the error
         }
       })
       .catch((error) => {
+        document.getElementById("formulaire_erreurs").innerHTML = "Impossible de transférer le formulaire - Réessayer ulétrieurement";
         alert("Reponse Erreur !");
         // Handle the error
       });
