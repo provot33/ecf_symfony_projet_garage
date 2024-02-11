@@ -100,6 +100,9 @@ try {
         <div id="boutonEnvoyer" class="div_center">
           <button type="submit">Envoyer</button>
         </div>
+        <div id="boutonRetour" class="div_center" style="display:none">
+          <button onclick="window.location.href='/';">Retour à l'accueil</button>
+        </div>
       </fieldset>
     </form>
   </main>

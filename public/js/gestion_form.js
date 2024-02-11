@@ -6,6 +6,7 @@ function resetErreurFormulaire() {
   document.getElementById("message").style.backgroundColor = "";
   document.getElementById("formulaire_erreurs").innerHTML = "";
   document.getElementById("boutonEnvoyer").style.display= "block";
+  document.getElementById("boutonRetour").style.display= "none";
 }
 
 const regExprTelephone = /^0\d{9}$/;
@@ -66,6 +67,7 @@ form.addEventListener("submit", (event) => {
         if (response.ok) {
           // Handle the successful response
           document.getElementById("boutonEnvoyer").style.display= "none";
+          document.getElementById("boutonRetour").style.display= "block";
           document.getElementById("formulaire_erreurs").innerHTML = "Le formulaire a été envoyée";
           alert("Reponse OK !");
         } else {

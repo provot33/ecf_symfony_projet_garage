@@ -15,7 +15,7 @@ VALUES ('".htmlspecialchars($_POST['nom'])."', '".htmlspecialchars($_POST['preno
 //echo $result->rowCount();
 //echo "<br/<br/>";
 
-if ($$pdo->query($sql)) {
+if ($pdo->query($sql, PDO::FETCH_ASSOC)) {
     // Le traitement est un succès
     http_response_code(200);
 }
