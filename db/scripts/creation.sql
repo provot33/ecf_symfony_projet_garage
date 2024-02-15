@@ -60,23 +60,23 @@ CREATE TABLE IF NOT EXISTS VEHICULE(
 -- Insertion des données
    
 INSERT INTO VEHICULE
-(IDENTIFIANT, MODELE, PRIX, KIOMETRAGE, MOTORISATION, ANNEE, NOMBRE_DE_PORTES, URLMINIATURE, MISE_EN_AVANT1, MISE_EN_AVANT2, MISE_EN_AVANT3)
+(IDENTIFIANT, MODELE, MARQUE, PRIX, KILOMETRAGE, MOTORISATION, ANNEE, NOMBRE_DE_PORTES, URLMINIATURE, MISE_EN_AVANT1, MISE_EN_AVANT2, MISE_EN_AVANT3)
 VALUES (1, 'OPEL', 'CORSA', 30000, 35000, 'Diesel', 2016, 3, '/assets/photo voiture à vendre/opel/opel1.jpg', '4 places', 'TDI', 'Climatisation');
 
 INSERT INTO VEHICULE
-(IDENTIFIANT, MODELE, PRIX, KIOMETRAGE, MOTORISATION, ANNEE, NOMBRE_DE_PORTES, URLMINIATURE, MISE_EN_AVANT1, MISE_EN_AVANT2, MISE_EN_AVANT3)
+(IDENTIFIANT, MODELE, MARQUE, PRIX, KILOMETRAGE, MOTORISATION, ANNEE, NOMBRE_DE_PORTES, URLMINIATURE, MISE_EN_AVANT1, MISE_EN_AVANT2, MISE_EN_AVANT3)
 VALUES (2, 'RENAULT', 'MEGANE', 41000, 65000, 'Essence', 2017, 5, '/assets/photo voiture à vendre/RENAULT CLIO ET MEGANE/MEGANE/megane2.jpg', '5 places', 'Intérieur "Premium"', 'Climatisation');
 			
 INSERT INTO VEHICULE
-(IDENTIFIANT, MODELE, PRIX, KIOMETRAGE, MOTORISATION, ANNEE, NOMBRE_DE_PORTES, URLMINIATURE, MISE_EN_AVANT1, MISE_EN_AVANT2, MISE_EN_AVANT3)
+(IDENTIFIANT, MODELE, MARQUE, PRIX, KILOMETRAGE, MOTORISATION, ANNEE, NOMBRE_DE_PORTES, URLMINIATURE, MISE_EN_AVANT1, MISE_EN_AVANT2, MISE_EN_AVANT3)
 VALUES (3, 'RENAULT', 'CLIO', 19000, 12000, 'Essence', 2006, 3, '/assets/photo voiture à vendre/RENAULT CLIO ET MEGANE/CLIO/clio4.jpg', '4 places', 'Carnet d\'entretien', 'Non Fumeur');
 						
 INSERT INTO VEHICULE
-(IDENTIFIANT, MODELE, PRIX, KIOMETRAGE, MOTORISATION, ANNEE, NOMBRE_DE_PORTES, URLMINIATURE, MISE_EN_AVANT1, MISE_EN_AVANT2, MISE_EN_AVANT3)
+(IDENTIFIANT, MODELE, MARQUE, PRIX, KILOMETRAGE, MOTORISATION, ANNEE, NOMBRE_DE_PORTES, URLMINIATURE, MISE_EN_AVANT1, MISE_EN_AVANT2, MISE_EN_AVANT3)
 VALUES (4, 'AUDI', 'QUATRO', 37000, 100000, 'Essence', 2016, 5, '/assets/photo voiture à vendre/voiture a/audi 1.jpg', '5 places', 'Familliale', 'Carbu Double Corps');
 
 INSERT INTO VEHICULE
-(IDENTIFIANT, MODELE, PRIX, KIOMETRAGE, MOTORISATION, ANNEE, NOMBRE_DE_PORTES, URLMINIATURE, MISE_EN_AVANT1, MISE_EN_AVANT2, MISE_EN_AVANT3)
+(IDENTIFIANT, MODELE, MARQUE, PRIX, KILOMETRAGE, MOTORISATION, ANNEE, NOMBRE_DE_PORTES, URLMINIATURE, MISE_EN_AVANT1, MISE_EN_AVANT2, MISE_EN_AVANT3)
 VALUES (5, 'TESLA', 'MODEL-X', 50000, 110000, 'Electrique', 2016, 5, '/assets/photo voiture à vendre/voiture a/audi 1.jpg', '7 places', '0-100km en 5s', 'Attelage');
 
 -- INSERT INTO VEHICULE
@@ -130,17 +130,25 @@ VALUES (1, 'Equipement1', 'Equipement2', 'Equipement3', 'Equipement4', 'Equipeme
 'Equipement6', 'Equipement7', 'Equipement8', 'Equipement9', 'Equipement10',
 "Super véhicule trop classe de ouf !!");
 
--- INSERT INTO DETAIL_VEHICULE
--- VALUES (2,);
+INSERT INTO DETAIL_VEHICULE
+VALUES (2, 'Equipement1', 'Equipement2', 'Equipement3', 'Equipement4', 'Equipement5',
+'Equipement6', 'Equipement7', 'Equipement8', 'Equipement9', 'Equipement10',
+"Super véhicule trop classe de ouf !!");
 
--- INSERT INTO DETAIL_VEHICULE
--- VALUES (3, );
+INSERT INTO DETAIL_VEHICULE
+VALUES (3, 'Equipement1', 'Equipement2', 'Equipement3', 'Equipement4', 'Equipement5',
+'Equipement6', 'Equipement7', 'Equipement8', 'Equipement9', 'Equipement10',
+"Super véhicule trop classe de ouf !!");
 
--- INSERT INTO DETAIL_VEHICULE
--- VALUES (4, );
+INSERT INTO DETAIL_VEHICULE
+VALUES (4, 'Equipement1', 'Equipement2', 'Equipement3', 'Equipement4', 'Equipement5',
+'Equipement6', 'Equipement7', 'Equipement8', 'Equipement9', 'Equipement10',
+"Super véhicule trop classe de ouf !!");
 
--- INSERT INTO DETAIL_VEHICULE
--- VALUES (5, );
+INSERT INTO DETAIL_VEHICULE
+VALUES (5, 'Equipement1', 'Equipement2', 'Equipement3', 'Equipement4', 'Equipement5',
+'Equipement6', 'Equipement7', 'Equipement8', 'Equipement9', 'Equipement10',
+"Super véhicule trop classe de ouf !!");
 
 -- INSERT INTO DETAIL_VEHICULE
 -- VALUES (6, );
@@ -288,7 +296,7 @@ VALUES (1, '0970543233', '220 chemin long', '', 31004, 'Toulouse');
 CREATE TABLE IF NOT EXISTS JOUR_OUVERTURE(
    IDENTIFIANT          INT NOT NULL PRIMARY KEY,
    NOM_JOUR             VARCHAR(8) NOT NULL,
-   POSITION_JOUR        SMALLINT NOT NULL
+   POSITION_JOUR        SMALLINT NOT NULL,
    OUVERT               BOOLEAN NOT NULL DEFAULT FALSE
 );
 
@@ -504,6 +512,22 @@ VALUES (3, "Dubard", "Robert", "robert.dubard@orange.fr", 4, "Satisfait, rapide 
 -- Supprime la table
 -- DROP TABLE COMMENTAIRES;
 
+-- ------------- TABLE SUJET DU CONTACT ---------------
+-- Création de la table
+CREATE TABLE IF NOT EXISTS SUJET_CONTACT(
+   IDENTIFIANT			    INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+   LIBELLE_SUJET              VARCHAR(50)	NOT NULL
+);
+
+-- Insertion des données
+INSERT INTO SUJET_CONTACT (LIBELLE_SUJET)
+VALUES ('Achat véhicule occasion'), ('Réparation carrosserie'), ('Réparation véhicule'), ('Demande de contrôle technique');
+
+INSERT INTO SUJET_CONTACT
+VALUES (2000000, 'Autre');
+-- VALUES (1, "José", "Garcia", "jose.garcia@yahoo.fr", "Très satisfait de ce garage. Equipe au top", true );
+
+
 -- ------------- TABLE FORMULAIRE DE CONTACT ---------------
 -- Création de la table
 CREATE TABLE IF NOT EXISTS FORMULAIRE_CONTACT(
@@ -517,6 +541,7 @@ CREATE TABLE IF NOT EXISTS FORMULAIRE_CONTACT(
    A_ETE_TRAITE             BOOLEAN		NOT NULL DEFAULT FALSE,
    FOREIGN KEY (ID_SUJET)
    REFERENCES SUJET_CONTACT(IDENTIFIANT)
+   ON DELETE NO ACTION 
 );
 
 -- Insertion des données
@@ -538,20 +563,6 @@ CREATE TABLE IF NOT EXISTS FORMULAIRE_CONTACT(
 -- Supprime la table
 -- DROP TABLE FORMULAIRE_CONTACT;
 
--- ------------- TABLE SUJET DU CONTACT ---------------
--- Création de la table
-CREATE TABLE IF NOT EXISTS SUJET_CONTACT(
-   IDENTIFIANT			    INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-   LIBELLE_SUJET              VARCHAR(50)	NOT NULL
-);
-
--- Insertion des données
-INSERT INTO SUJET_CONTACT (LIBELLE_SUJET)
-VALUES ('Achat véhicule occasion'), ('Réparation carrosserie'), ('Réparation véhicule'), ('Demande de contrôle technique');
-
-INSERT INTO SUJET_CONTACT
-VALUES (2000000, 'Autre');
--- VALUES (1, "José", "Garcia", "jose.garcia@yahoo.fr", "Très satisfait de ce garage. Equipe au top", true );
 
 
 -- ------------- TABLE CONTACT TRAITE PAR ---------------
