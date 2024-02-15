@@ -8,19 +8,19 @@ $password = '';
 
 /* Base de données MariaDB dans le cloud */
 // mysql://cz02uo6310nxgb92:jhrhmf9jr48frgj3@j5zntocs2dn6c3fj.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/b9f6eocr4cy1skg2
+echo 'Valeur de JAWSDB_URL : ' . getenv('JAWSDB_URL');
 
-if (getenv('JAWSDB_URL') !== false){
+if (getenv('JAWSDB_URL') !== false) {
     // Serveur Heroku
     $dbparts = parse_url(getenv('JAWSDB_URL'));
 
-
-    $hostname =  $dbparts['host'];
+    $host = $dbparts['host'];
     $user = $dbparts['user'];
     $password = $dbparts['pass'];
-    $database = ltrim($dbparts['path'], '/');  
-} 
+    $database = ltrim($dbparts['path'], '/');
+}
 
-$dsn = 'mysql:dbname='.$database.';host='.$hostname.';port=3306';
+$dsn = 'mysql:dbname=' . $database . ';host=' . $host . ';port=3306';
 
 try {
 
@@ -28,4 +28,3 @@ try {
 } catch (PDOException $e) {
 
 }
-?>
