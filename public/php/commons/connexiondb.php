@@ -12,7 +12,7 @@ echo 'Valeur de JAWSDB_MARIA_URL : ' . getenv('JAWSDB_MARIA_URL');
 
 if (getenv('JAWSDB_MARIA_URL') !== false) {
     // Serveur Heroku
-    $dbparts = parse_url(getenv('JAWSDB_URL'));
+    $dbparts = parse_url(getenv('JAWSDB_MARIA_URL'));
 
     $host = $dbparts['host'];
     $user = $dbparts['user'];
