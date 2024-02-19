@@ -1,8 +1,8 @@
-<!DOCTYPE html>
-<html lang="fr">
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/verification_session.php';
 ?>
+<!DOCTYPE html>
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">

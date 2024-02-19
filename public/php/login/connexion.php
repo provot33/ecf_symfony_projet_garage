@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/connexiondb.php';
 ?>
@@ -27,8 +26,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/connexiondb.php';
     <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/html/header.html';
 ?>
-<?= console_log("Page de connexion"); ?>
-    <form  action="/php/commons/initialise_connexion.php" method=POST>
+    <form action="/php/commons/initialise_connexion.php" method=POST>
         <fieldset>
             <legend>Connexion</legend>
             <div class="formulaire_contact">

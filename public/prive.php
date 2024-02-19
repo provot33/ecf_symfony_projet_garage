@@ -1,3 +1,3 @@
 <?php
-Header('Location:/php/login/connexion.php');
+Header('Location:/php/gestion/index.php');
 ?>

@@ -32,7 +32,7 @@ try {
             $i++;
         }
     }
-    $tableauParcouru = '';         
+       
     // Mise en forme HTML des résultats.
     foreach ($tableau as $ligne){ 
         echo '<tr><td>' .$ligne['NOM_JOUR'].'</td><td> : </td><td>';
@@ -49,7 +49,6 @@ try {
         }
         echo '</td></tr>';
     }
-    echo $tableauParcouru;
 } catch (PDOException $e) {
 
 }
