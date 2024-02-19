@@ -24,7 +24,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/verification_session.php';
 
 <body>
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/html/header_authent.html';
+include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/header_authent.php';
 ?>
     <h1>VOUS ETES GESTIONNAIRE DU SITE</h1>
     <main>

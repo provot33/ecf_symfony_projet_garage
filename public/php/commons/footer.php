@@ -24,19 +24,24 @@ try {
             $tableau[$i]['HEURE_OUVERTURE_MATIN'] = $horaires['HEURE_OUVERTURE'];
             $tableau[$i]['HEURE_FERMETURE_MATIN'] = $horaires['HEURE_FERMETURE'];
             $jourCourant = $horaires['NOM_JOUR'];
+            $i++;
         } else {
+            $i--;
             $tableau[$i]['HEURE_OUVERTURE_APRES_MIDI'] = $horaires['HEURE_OUVERTURE'];
             $tableau[$i]['HEURE_FERMETURE_APRES_MIDI'] = $horaires['HEURE_FERMETURE'];
             $i++;
         }
     }
-             
+    $tableauParcouru = '';         
     // Mise en forme HTML des résultats.
     foreach ($tableau as $ligne){ 
         echo '<tr><td>' .$ligne['NOM_JOUR'].'</td><td> : </td><td>';
         if ($ligne['OUVERT']){
-            echo ' '.$ligne['HEURE_OUVERTURE_MATIN'].'-'.$ligne['HEURE_FERMETURE_MATIN'];
-            if (false !== $ligne['HEURE_OUVERTURE_APRES_MIDI']){
+            if (isset($ligne['HEURE_OUVERTURE_MATIN'])){
+                echo ' '.$ligne['HEURE_OUVERTURE_MATIN'].'-'.$ligne['HEURE_FERMETURE_MATIN'];
+            } 
+            //echo ' '.$ligne['HEURE_OUVERTURE_MATIN'].'-'.$ligne['HEURE_FERMETURE_MATIN'];
+            if (isset($ligne['HEURE_OUVERTURE_APRES_MIDI'])){
                 echo ', '.$ligne['HEURE_OUVERTURE_APRES_MIDI'].'-'.$ligne['HEURE_FERMETURE_APRES_MIDI'];
             } 
         } else {
@@ -44,6 +49,7 @@ try {
         }
         echo '</td></tr>';
     }
+    echo $tableauParcouru;
 } catch (PDOException $e) {
 
 }

@@ -23,7 +23,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/verification_roles.php';
 </head>
 <body>
 <?php
-include($_SERVER['DOCUMENT_ROOT'] . '/html/header_authent.html');
+include($_SERVER['DOCUMENT_ROOT'] . '/php/commons/header_authent.php');
 ?>
 
 <main>

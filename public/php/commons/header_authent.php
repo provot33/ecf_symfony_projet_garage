@@ -15,25 +15,28 @@
                         <a class="nav-link active" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/php/recherche_voiture.php">Recherche
-                            Vehicule</a>
+                        <a class="nav-link" href="/php/recherche_voiture.php">Gestion des
+                            Vehicules</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="./#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            Joindre le Garage
+                            Gestion du Garage
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item"
                                     href="/php/formulaires_de_contact_et_avis.php">Laisser un Avis</a>
                             </li>
-                            <li><a class="dropdown-item" href="#">Lire nos Avis</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item"
-                                    href="/php/formulaires_de_contact.php">Demander un
-                                    Rendez-vous</a></li>
+                            <li><a class="dropdown-item" href="#">Valider les Avis</a></li>
+<?php
+    if ($ligneUser['EST_ADMINISTRATEUR']){
+        echo '<li><hr class="dropdown-divider"></li>'.
+            '<li><a class="dropdown-item" href="/php/formulaires_de_contact.php">'.
+            'Créer un nouveau salarié</a></li>'.
+            '<li><a class="dropdown-item" href="/php/gestion/gestion_horaires.php">'.
+            'Gérer les horaires</a></li>';
+    }
+?>
                         </ul>
                     </li>
                 </ul>
