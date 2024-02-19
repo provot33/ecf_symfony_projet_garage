@@ -40,7 +40,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/html/header.html';
 <?php
 try {
     $i = 0;
-    // Alimentation de la combe des modèles de voiture disponible.
+    // Alimentation de la combo des modèles de voiture disponible.
     foreach ($pdo->query('SELECT DISTINCT(MARQUE) FROM VEHICULE ORDER BY MARQUE ASC', PDO::FETCH_ASSOC) as $modeles) {
         echo '<option value="'.$i.'">'.$modeles['MARQUE'].'</option>';
         $i++;

@@ -1,15 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
-<!-- <FieldSet>
-<FORM action="VerifId.php" method=POST>
-<Legend>  Identification</Legend>
-<INPUT Type=Test Name="Login"  placeholder="Login"   required>
-<INPUT Type=Test Name="Password" placeholder="Passord" required>
-<INPUT Type=SUBMIT Value="Log !">
-</FORM>
-</FieldSet> -->
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/connexiondb.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/verification_session.php';
 ?>
 
 <head>
@@ -34,7 +26,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/connexiondb.php';
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/html/header.html';
 ?>
-
+    <h1>VOUS ETES GESTIONNAIRE DU SITE</h1>
     <main>
         <h1> Un service de carrosserie de premier ordre </h1>
         <P>Bienvenue chez notre service carrossier peintre automobile expert,
