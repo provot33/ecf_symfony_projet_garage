@@ -125,7 +125,7 @@ La base de données associée est disponible à l'adresse suivante :
 
 * **Username** : cz02uo6310nxgb92
 
-* **Password** :  Contacter la propriétaire du projet pour avoir le mot de passe.
+* **Password** :  Contacter la propriétaire du projet pour avoir le mot de passe. Il a été précisé dans le dossier rendu pour l'examen.
 
 
 
