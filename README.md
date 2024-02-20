@@ -65,7 +65,7 @@ DocumentRoot "E:\formation php symphony\repository\ecf_garage\ecf_symfony_projet
 La page d'accueil sera alors :
 http://localhost/
 
-Pour la partie privée, celle-ci sera accessible grace à la page de connexion :
+Pour la partie privée, celle-ci sera accessible grâce à la page de connexion :
 http://localhost/prive.php
 
 L'ensemble du projet est conçu pour que le répertoire racine soit le répertoire **/public**.
@@ -117,7 +117,7 @@ https://garage-eb7a768e1ffa.herokuapp.com/public/prive.php
 
 La liste des utilisateurs présentée dans la partie **Base de données** ci-dessus est également valable sur ce site. 
 
-La base de donnée associée est disponible à l'adresse suivante :
+La base de données associée est disponible à l'adresse suivante :
 
 * **Hostname** : j5zntocs2dn6c3fj.chr7pe7iynqr.eu-west-1.rds.amazonaws.com
 
