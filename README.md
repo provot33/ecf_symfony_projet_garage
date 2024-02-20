@@ -51,7 +51,7 @@ La page d'accueil du site et la page de redirection vers la partie privée.
 
 Une fois redescendu, le projet peut être déployé sur un serveur web type Apache.
 
-Il faudra pour cela préciser le DocumentRoot et Directory dans le fichier httpd.conf comme étant
+Il faudra pour cela préciser le DocumentRoot et Directory dans le fichier httpd.conf comme étant  
 **~/ecf_symfony_projet_garage/public**
 
 exemple extrait d'un httpd.conf :
@@ -62,10 +62,10 @@ DocumentRoot "E:\formation php symphony\repository\ecf_garage\ecf_symfony_projet
 (...)
 ```
 
-La page d'accueil sera alors :
+La page d'accueil sera alors :  
 http://localhost/
 
-Pour la partie privée, celle-ci sera accessible grâce à la page de connexion :
+Pour la partie privée, celle-ci sera accessible grâce à la page de connexion :  
 http://localhost/prive.php
 
 L'ensemble du projet est conçu pour que le répertoire racine soit le répertoire **/public**.
@@ -109,10 +109,10 @@ if (getenv('JAWSDB_MARIA_URL') !== false) {
 ```
 
 ### Serveur Heroku
-Il est possible de pouvoir utiliser le site déployé à l'adresse :
+Il est possible de pouvoir utiliser le site déployé à l'adresse :  
 https://garage-eb7a768e1ffa.herokuapp.com/
 
-Et la partie privée se trouvera sous :
+Et la partie privée se trouvera sous :  
 https://garage-eb7a768e1ffa.herokuapp.com/prive.php
 
 La liste des utilisateurs présentée dans la partie **Base de données** ci-dessus est également valable sur ce site. 
