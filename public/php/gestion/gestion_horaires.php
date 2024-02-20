@@ -2,6 +2,7 @@
 <html lang="fr">
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/verification_session.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/verification_roles.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/tools.php';
 ?>
 

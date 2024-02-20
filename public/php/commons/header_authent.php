@@ -27,7 +27,7 @@
                             <li><a class="dropdown-item"
                                     href="/php/formulaires_de_contact_et_avis.php">Laisser un Avis</a>
                             </li>
-                            <li><a class="dropdown-item" href="#">Valider les Avis</a></li>
+                            <li><a class="dropdown-item" href="/php/gestion/validation_avis.php">Valider les Avis</a></li>
 <?php
     if ($ligneUser['EST_ADMINISTRATEUR']){
         echo '<li><hr class="dropdown-divider"></li>'.
