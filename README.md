@@ -110,10 +110,10 @@ if (getenv('JAWSDB_MARIA_URL') !== false) {
 
 ### Serveur Heroku
 Il est possible de pouvoir utiliser le site déployé à l'adresse :
-https://garage-eb7a768e1ffa.herokuapp.com/public/
+https://garage-eb7a768e1ffa.herokuapp.com/
 
 Et la partie privée se trouvera sous :
-https://garage-eb7a768e1ffa.herokuapp.com/public/prive.php
+https://garage-eb7a768e1ffa.herokuapp.com/prive.php
 
 La liste des utilisateurs présentée dans la partie **Base de données** ci-dessus est également valable sur ce site. 
 
