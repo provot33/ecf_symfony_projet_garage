@@ -4,10 +4,10 @@ CREATE SCHEMA IF NOT EXISTS MON_PROJET_GARAGE;
 -- ------------- TABLE DU PERSONNEL ---------------
 
 CREATE TABLE IF NOT EXISTS PERSONNEL(
-   IDENTIFIANT 			INT 		NOT NULL UNIQUE PRIMARY KEY,
+   IDENTIFIANT 			INT 		NOT NULL PRIMARY KEY AUTO_INCREMENT,
    NOM 					VARCHAR(50) NOT NULL,
    PRENOM 				VARCHAR(50) NOT NULL,
-   ADRESSE_COURRIEL 	VARCHAR(50) NOT NULL,
+   ADRESSE_COURRIEL 	VARCHAR(50) NOT NULL UNIQUE,
    MOT_DE_PASSE			VARCHAR(50) NOT NULL,
    EST_ADMINISTRATEUR	BOOLEAN		NOT NULL DEFAULT FALSE
 );
@@ -15,19 +15,24 @@ CREATE TABLE IF NOT EXISTS PERSONNEL(
 -- Insertion des données
 
 INSERT INTO PERSONNEL
-VALUES (1, "Parrot", "Vincent", "v.parrot@garage.parrot.fr", "ChangeOnInstall", true);
+(NOM, PRENOM, ADRESSE_COURRIEL, MOT_DE_PASSE, EST_ADMINISTRATEUR)
+VALUES ("Parrot", "Vincent", "v.parrot@garage.parrot.fr", PASSWORD("v.parrot"), true);
 
 INSERT INTO PERSONNEL
-VALUES (2, "Dupont", "Jose", "j.dupont@garage.parrot.fr", "ChangeOnInstall", false);
+(NOM, PRENOM, ADRESSE_COURRIEL, MOT_DE_PASSE, EST_ADMINISTRATEUR)
+VALUES ("Dupont", "Jose", "j.dupont@garage.parrot.fr", PASSWORD("j.dupont"), false);
 
 INSERT INTO PERSONNEL
-VALUES (3, "Iourive", "Kenny", "k.iourive@garage.parrot.fr", "ChangeOnInstall", false);
+(NOM, PRENOM, ADRESSE_COURRIEL, MOT_DE_PASSE, EST_ADMINISTRATEUR)
+VALUES ("Iourive", "Kenny", "k.iourive@garage.parrot.fr", PASSWORD("k.iourive"), false);
 
 INSERT INTO PERSONNEL
-VALUES (4, "Hingue", "Carla", "c.hingue@garage.parrot.fr", "ChangeOnInstall", false);
+(NOM, PRENOM, ADRESSE_COURRIEL, MOT_DE_PASSE, EST_ADMINISTRATEUR)
+VALUES ("Hingue", "Carla", "c.hingue@garage.parrot.fr", PASSWORD("c.hingue"), false);
 
 INSERT INTO PERSONNEL
-VALUES (5, "Heinchtaine", "Albert", "a.heinchtaine@garage.parrot.fr", "ChangeOnInstall", false);
+(NOM, PRENOM, ADRESSE_COURRIEL, MOT_DE_PASSE, EST_ADMINISTRATEUR)
+VALUES ("Heinchtaine", "Albert", "a.heinchtaine@garage.parrot.fr", PASSWORD("a.heinchtaine"), false);
 
 -- Permet d'avoir la description de la table créée
 -- DESC PERSONNEL;
@@ -41,7 +46,7 @@ VALUES (5, "Heinchtaine", "Albert", "a.heinchtaine@garage.parrot.fr", "ChangeOnI
 -- ------------- TABLE DES VEHICULES ---------------
 
 CREATE TABLE IF NOT EXISTS VEHICULE(
-   IDENTIFIANT			INT			NOT NULL UNIQUE PRIMARY KEY,
+   IDENTIFIANT			INT			NOT NULL PRIMARY KEY,
    MARQUE				VARCHAR(50)	NOT NULL,
    MODELE				VARCHAR(50)	NOT NULL,
    PRIX 				INT 		NOT NULL,
@@ -106,7 +111,7 @@ VALUES (5, 'TESLA', 'MODEL-X', 50000, 110000, 'Electrique', 2016, 5, '/assets/ph
 -- ------------- TABLE DETAIL DES VEHICULES ---------------
 
 CREATE TABLE IF NOT EXISTS DETAIL_VEHICULE(
-   IDENTIFIANT			INT			NOT NULL UNIQUE PRIMARY KEY,
+   IDENTIFIANT			INT			NOT NULL PRIMARY KEY,
    EQUIPEMENT1			VARCHAR(60) NOT NULL,
    EQUIPEMENT2			VARCHAR(60) NOT NULL,
    EQUIPEMENT3			VARCHAR(60) NOT NULL,
@@ -177,7 +182,7 @@ VALUES (5, 'Equipement1', 'Equipement2', 'Equipement3', 'Equipement4', 'Equipeme
 -- ------------- TABLE VISUEL DES VEHICULES ---------------
 
 CREATE TABLE IF NOT EXISTS VISUEL_VEHICULE(
-   IDENTIFIANT			  INT			NOT NULL UNIQUE PRIMARY KEY,
+   IDENTIFIANT			  INT			NOT NULL PRIMARY KEY,
    IDENTIFIANT_VEHICULE   int			NOT NULL,
    URL_VISUEL             VARCHAR(150)	NOT NULL,
    FOREIGN KEY (IDENTIFIANT_VEHICULE)
@@ -272,7 +277,7 @@ VALUES (18, 4, "/assets/photo voiture à vendre/voiture a/audi 4.jpg");
 
 -- ------------- TABLE CORDONNEES ---------------
 CREATE TABLE IF NOT EXISTS COORDONNEES(
-   IDENTIFIANT								INT			NOT NULL UNIQUE PRIMARY KEY,
+   IDENTIFIANT								INT			NOT NULL PRIMARY KEY,
    TELEPHONE								VARCHAR(14) NOT NULL,
    ADRESSE_RUE1								VARCHAR(50) NOT NULL,
    ADRESSE_RUE2								VARCHAR(50) NOT NULL,
@@ -390,7 +395,7 @@ VALUES (6, 3);
 -- ------------- TABLE CONTENU DU SITE ---------------
 
 CREATE TABLE IF NOT EXISTS CONTENU_SITE(
-   IDENTIFIANT								INT			NOT NULL UNIQUE PRIMARY KEY,
+   IDENTIFIANT								INT			NOT NULL PRIMARY KEY,
    ZONE_SITE1								TEXT		NOT NULL,
    ZONE_SITE2								TEXT		NOT NULL,
    ZONE_SITE3								TEXT		NOT NULL,
@@ -484,7 +489,7 @@ CREATE TABLE IF NOT EXISTS CONTENU_SITE(
 -- ------------- TABLE COMMENTAIRES ---------------
 
    CREATE TABLE IF NOT EXISTS COMMENTAIRES(
-   IDENTIFIANT					INT			NOT NULL UNIQUE PRIMARY KEY,
+   IDENTIFIANT					INT			NOT NULL PRIMARY KEY AUTO_INCREMENT,
    NOM_AUTEUR_COMMENTAIRE		VARCHAR(50)	NOT NULL,         
    PRENOM_AUTEUR_COMMENTAIRE	VARCHAR(50)	NOT NULL, 
    COURRIEL_AUTEUR				VARCHAR(50)	NOT NULL,
