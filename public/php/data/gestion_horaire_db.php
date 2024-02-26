@@ -6,12 +6,12 @@ http_response_code(500);
 // $sql = "INSERT INTO HORAIRE_OUVERTURE 
 // (HEURE_OUVERTURE, HEURE_FERMETURE)
 // VALUES ('".$_POST['horaire_debut_plage']."', '".$_POST['horaire_fin_plage']."')";
-$mavar = implode($_POST);
-echo $mavar;
-echo "<br/<br/>";
-echo 'Lundi :'.$_POST['Lundi_Identifiant'].' - '.$_POST['Lundi_Est_Ouvert'].' - '.$_POST['Lundi_Plage_1'].' - '.$_POST['Lundi_Plage_2'];
-echo "<br/<br/>";
-echo 'Mardi :'.$_POST['Mardi_Identifiant'].' - '.$_POST['Mardi_Est_Ouvert'];
+// $mavar = implode($_POST);
+// echo $mavar;
+// echo "<br/<br/>";
+// echo 'Lundi :'.$_POST['Lundi_Identifiant'].' - '.$_POST['Lundi_Est_Ouvert'].' - '.$_POST['Lundi_Plage_1'].' - '.$_POST['Lundi_Plage_2'];
+// echo "<br/<br/>";
+// echo 'Mardi :'.$_POST['Mardi_Identifiant'].' - '.$_POST['Mardi_Est_Ouvert'];
 
 $traitementOk = true;
 

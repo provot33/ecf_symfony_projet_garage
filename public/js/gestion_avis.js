@@ -1,17 +1,12 @@
 function resetErreurFormulaire() {
   document.getElementById("nom").style.backgroundColor = "";
   document.getElementById("prenom").style.backgroundColor = "";
-  document.getElementById("email").style.backgroundColor = "";
-  document.getElementById("telephone").style.backgroundColor = "";
   document.getElementById("message").style.backgroundColor = "";
-  document.getElementById("formulaire_erreurs").innerHTML = "";
   document.getElementById("boutonEnvoyer").style.display= "block";
   document.getElementById("boutonRetour").style.display= "none";
 }
 
-const regExprTelephone = /^0\d{9}$/;
-
-const form = document.getElementById("contact_form");
+const form = document.getElementById("avis_form");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault(); // Evite la soumission par défaut du formulaire
@@ -35,16 +30,9 @@ form.addEventListener("submit", (event) => {
     erreurs.push("Le courriel doit être renseigné");
     donneesManqantes = true;
   }
-  if (!regExprTelephone.exec(form["telephone"].value)) {
-    document.getElementById("telephone").style.backgroundColor = "#ff0000";
-    erreurs.push(
-      "Le numéro de téléphone doit commencer par 0 et être composé de 10 chiffres"
-    );
-    donneesManqantes = true;
-  }
   if (form["message"].value === "") {
     document.getElementById("message").style.backgroundColor = "#ff0000";
-    erreurs.push("Le message doit être renseigné");
+    erreurs.push("L'avis doit être renseigné");
     donneesManqantes = true;
   }
 
@@ -58,7 +46,7 @@ form.addEventListener("submit", (event) => {
   } else {
     const formData = new FormData(form); // Create a FormData object with the form data
 
-    fetch("/php/data/demande_contact_db.php", {
+    fetch("/php/data/envoi_avis_db.php", {
       method: "POST",
       body: formData,
     })
