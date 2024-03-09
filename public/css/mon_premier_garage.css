@@ -114,16 +114,54 @@ label,
 }
 
 img {
-    max-height: 250px;
-    max-width: 200px;
+    /* max-height: 250px; */
+    max-width: 300px;
     border-color: #809FB0;
     border-width: 3px;
     border-style: solid;
 }
 
+/* .container{
+    display: flex;
+    position: relative;
+    flex-basis: auto;
+    flex-shrink: 20%;
+    flex-grow: 50%;
+} */
+
+.container_droite{
+    display: flex;
+    position: relative;
+    /* flex-basis: auto;
+    flex-shrink: 1;
+    flex-grow: 1; */
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.container_gauche{
+    display: flex;
+    position: relative;
+    /* flex-basis: auto;
+    flex-shrink: 1;
+    flex-grow: 1; */
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+}
+
+.texte-block {
+    position: relative;
+    padding-left: 10px;
+    padding-right: 10px;
+    flex-basis: 55em;
+    align-items: center;
+}
+
 .cadre_img {
     margin: 4px;
     display: flex;
+    flex: 1 1 auto;
+    align-items: center;
 }
 
 .texte_img {
@@ -149,6 +187,7 @@ fieldset {
     margin-left: auto;
     margin-right: auto;
     display: block;
+    max-width: 200px;
 }
 
 .portrait article {
