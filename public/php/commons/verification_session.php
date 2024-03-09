@@ -49,7 +49,7 @@ if ($checkUser == false) {
             exit;
         }   
     } else {
-        $_SESSION['loginCount'] = 1;
+        $_SESSION['LOGIN_COUNT'] = 1;
     }
     Header('Location:/php/login/connexion.php');
     exit;
