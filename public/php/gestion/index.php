@@ -86,19 +86,19 @@ include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/header_authent.php';
         <div>
             <div class="equipe">
                 <div class="portrait">
-                    <img src="/assets/presentation équipe mécaniciens/kenny-eliason-ROND.png" alt="photo d'un employé Kenny">
+                    <img src="/assets/presentation équipe mécaniciens/kenny.png" alt="photo d'un employé Kenny">
                     <article> Kenny carrossier depuis 15 ans</article> <br>
                 </div>
                 <div class="portrait">
-                    <img src="/assets/presentation équipe mécaniciens/Jose_rond.png" alt="photo d'un employé José">
+                    <img src="/assets/presentation équipe mécaniciens/jose.png" alt="photo d'un employé José">
                     <article> José, peintre carrossier depuis 30 ans</article> <br>
                 </div>
                 <div class="portrait">
-                    <img src="/assets/presentation équipe mécaniciens/carla rond-279949.png" alt="photo d'une salariée Carla">
+                    <img src="/assets/presentation équipe mécaniciens/carla.png" alt="photo d'une salariée Carla">
                     <article> Carla, réparatrice de véhicule depuis 2 ans</article>
                 </div>
                 <div class="portrait">
-                    <img src="/assets/presentation équipe mécaniciens/alfred.rond.png" alt="photo d'un salarié Alfred">
+                    <img src="/assets/presentation équipe mécaniciens/alfred.png" alt="photo d'un salarié Alfred">
                     <article> Alfred, vendeur de voitures depuis 5 ans</article>
                 </div>
             </div>
