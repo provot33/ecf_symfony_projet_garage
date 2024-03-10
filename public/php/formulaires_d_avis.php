@@ -144,6 +144,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/connexiondb.php';
         </div>        
       </fieldset>
     </form>
+    <hr />
   </main>
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/footer.php';

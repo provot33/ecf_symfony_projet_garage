@@ -54,6 +54,7 @@ try {
 }
 ?> 
         </nav>
+        <hr />
     </main>
     <br />
 <?php

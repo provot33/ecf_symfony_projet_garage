@@ -105,6 +105,7 @@ try {
         </div>
       </fieldset>
     </form>
+    <hr />
   </main>
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/footer.php';
