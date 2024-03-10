@@ -93,7 +93,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/header_authent.php';
         <section>
             <p> Prenez contact par téléphone ou via notre formulaire pour un devis, une voiture qui vous interesse ou un
                 tarif</p>
-            <div class=" div_center">
+            <div class=" div_centre">
                 <a href="/php/formulaires_de_contact.php">
                     <button>Cliquez ici</button>
                 </a>

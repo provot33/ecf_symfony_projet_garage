@@ -12,7 +12,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        <a class="nav-link" href="/php/gestion/index.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/php/recherche_voiture.php">Gestion des
@@ -25,7 +25,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item"
-                                    href="/php/formulaires_de_contact_et_avis.php">Laisser un Avis</a>
+                                    href="/php/formulaires_d_avis.php">Laisser un Avis</a>
                             </li>
                             <li><a class="dropdown-item" href="/php/gestion/validation_avis.php">Valider les Avis</a></li>
 <?php

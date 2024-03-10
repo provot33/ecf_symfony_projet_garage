@@ -34,7 +34,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/connexiondb.php';
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/html/header.html';
 ?>
-
     <main>
         <h1> Un service de carrosserie de premier ordre </h1>
         <section>
@@ -75,7 +74,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/html/header.html';
                     </div>
                 </div>      
                 <div class="cadre_img">
-                    <img class="texte_img" src="/assets/photo voiture à vendre/crashed-car-2727666_640.jpg" alt="voiture accidentée à l'avant">
+                    <img id="blue" class="texte_img" src="/assets/photo voiture à vendre/crashed-car-2727666_640.jpg" alt="voiture accidentée à l'avant">
                 </div>
             </div>
         </section>
@@ -101,7 +100,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/html/header.html';
         <section>
             <p> Prenez contact par téléphone ou via notre formulaire pour un devis, une voiture qui vous interesse ou un
                 tarif</p>
-            <div class=" div_center">
+            <div class=" div_centre">
                 <a href="/php/formulaires_de_contact.php">
                     <button>Cliquez ici</button>
                 </a>

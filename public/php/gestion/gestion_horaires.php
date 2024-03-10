@@ -68,7 +68,7 @@ try {
                         <div class="formulaire_contact" id="formulaire_erreurs_plage_horaire">
 
                         </div>
-                        <div class="div_center">
+                        <div class="div_centre">
                             <button type="submit">Ajouter la plage</button>
                         </div>
                     </form>
@@ -157,7 +157,7 @@ try {
                         <div class="formulaire_contact" id="formulaire_erreurs_horaire">
 
                         </div>
-                        <div class="div_center">
+                        <div class="div_centre">
                             <button type="submit">Valider les horaires</button>
                         </div>
                     </form>
@@ -200,7 +200,7 @@ try {
                 <div class="formulaire_contact" id="formulaire_erreurs_adresse">
 
                 </div>
-                <div class="div_center">
+                <div class="div_centre">
                     <button type="submit">Valider l'adresse</button>
                 </div>
             </fieldset>

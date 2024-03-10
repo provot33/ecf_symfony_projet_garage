@@ -29,23 +29,23 @@ include $_SERVER['DOCUMENT_ROOT'] . '/html/header.html';
     <form action="/php/commons/initialise_connexion.php" method=POST>
         <fieldset>
             <legend>Connexion</legend>
-            <div class="formulaire_contact">
-                <div class="formulaire_label">
-                    <label style="width: 2em;" for="Login">Identifiant :</label>
+            <div class="formulaire_contact div_centre">
+                <div class="formulaire_label div_droite">
+                    <label for="Login">Identifiant :</label>
                 </div>
-                <div class="formulaire_champ">
+                <div class="formulaire_champ div_gauche">
                     <input type="email" id="Login" name="Login" placeholder="nom.prenom@yahoo.com">
                 </div>
             </div>
-            <div class="formulaire_contact">
-                <div class="formulaire_label">
-                    <label style="width: 5em;" for="Password">Mot de passe :</label>
+            <div class="formulaire_contact div_centre">
+                <div class="formulaire_label div_droite">
+                    <label for="Password">Mot de passe :</label>
                 </div>
-                <div class="formulaire_champ">
+                <div class="formulaire_champ div_gauche">
                     <input type="password" id="Password" name="Password" placeholder="********">
                 </div>
             </div>
-            <div class="div_center"><button type="submit"> Envoyer</button>
+            <div class="div_centre"><button type="submit"> Envoyer</button>
             </div>
         </fieldset>
     </form>

@@ -36,43 +36,43 @@ include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/connexiondb.php';
     <form id="contact_form" name="contact_form" method="post">
       <fieldset>
         <legend>Formulaire de contact</legend>
-        <div class="formulaire_contact">
-          <div class="formulaire_label">
+        <div class="formulaire_contact div_centre">
+          <div class="formulaire_label div_droite">
             <label for="nom">Mon nom :</label>
           </div>
-          <div class="formulaire_champ">
+          <div class="formulaire_champ div_gauche">
             <input name="nom" id="nom" type="text" placeholder="Dupont.....">
           </div>
         </div>
-        <div class="formulaire_contact">
-          <div class="formulaire_label">
-            <label style="width: 5em;" for="prenom">Mon prénom :</label>
+        <div class="formulaire_contact div_centre">
+          <div class="formulaire_label div_droite">
+            <label for="prenom">Mon prénom :</label>
           </div>
-          <div class="formulaire_champ">
+          <div class="formulaire_champ div_gauche">
             <input name="prenom" id="prenom" type="text" placeholder="José...">
           </div>
         </div>
-        <div class="formulaire_contact">
-          <div class="formulaire_label">
-            <label style="width: 2em;" for="telephone"><i class="bi bi-telephone-fill"></i></label>
+        <div class="formulaire_contact div_centre">
+          <div class="formulaire_label div_droite">
+            <label for="telephone"><i class="bi bi-telephone-fill"></i></label>
           </div>
-          <div class="formulaire_champ">
+          <div class="formulaire_champ div_gauche">
             <input name="telephone" id="telephone" type="text" placeholder="06...">
           </div>
         </div>
-        <div class="formulaire_contact">
-          <div class="formulaire_label">
-            <label style="width: 2em;" for="email"><i class="bi bi-envelope-fill"></i></label>
+        <div class="formulaire_contact div_centre">
+          <div class="formulaire_label div_droite">
+            <label for="email"><i class="bi bi-envelope-fill"></i></label>
           </div>
-          <div class="formulaire_champ">
+          <div class="formulaire_champ div_gauche">
             <input name="email" id="email" type="email" placeholder="nom.prenom@email.com">
           </div>
         </div>
-        <div class="formulaire_contact">
-          <div class="formulaire_label">
-            <label for="objet_contact">Objet</label>
+        <div class="formulaire_contact div_centre">
+          <div class="formulaire_label div_droite">
+            <label for="objet_contact">Objet :</label>
           </div>
-          <div class="formulaire_champ">
+          <div class="formulaire_champ div_gauche">
             <select name="objet_contact" id="objet_contact">
 <?php
 try {
@@ -91,16 +91,16 @@ try {
             </select>
           </div>
         </div>
-        <div class="formulaire_contact">
-          <textarea name="message" id="message" rows="10" , cols="40" placeholder="Mon message :"></textarea>
+        <div class="formulaire_contact div_centre">
+          <textarea name="message" id="message" rows="10" , cols="34" placeholder="Mon message :"></textarea>
         </div>
-        <div class="formulaire_contact" id="formulaire_erreurs">
+        <div class="formulaire_contact div_centre" id="formulaire_erreurs">
 
         </div>
-        <div id="boutonEnvoyer" class="div_center">
+        <div id="boutonEnvoyer" class="div_centre">
           <button type="submit">Envoyer</button>
         </div>
-        <div id="boutonRetour" class="div_center" style="display:none">
+        <div id="boutonRetour" class="div_centre" style="display:none">
           <button onclick="window.location.href='/';">Retour à l'accueil</button>
         </div>
       </fieldset>

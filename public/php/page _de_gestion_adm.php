@@ -80,7 +80,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/connexiondb.php';
             <option value="Fermé">Fermé</option>
           </select>
         </div>
-        <div class="div_center">
+        <div class="div_centre">
           <button type="submit"> Envoyer</button>
         </div>
         <div>
@@ -103,7 +103,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/connexiondb.php';
                 <label style="width: 2em;" for="email"><i class="bi bi-envelope-fill"></i></label>
                 <input type="email" id="email" placeholder="nom.prenom@yahoo.com">
                 <div>
-                  <div class="div_center">
+                  <div class="div_centre">
                     <button type="submit"> Envoyer</button>
                   </div>
           </form method="post">

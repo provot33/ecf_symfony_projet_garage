@@ -46,7 +46,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/connexiondb.php';
                         <input type="text" id="Prix">
                     </div>
 
-                    <div class="div_center">
+                    <div class="div_centre">
                         <button type="submit"> Envoyer</button>
                     </div>
                 </fieldset>
@@ -61,10 +61,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/connexiondb.php';
                         <label for="Commentaire">Commentaire:</label>
                         <input type="text" id="commentaire">
                     </div>
-                    <div class="div_center">
+                    <div class="div_centre">
                         <button type="submit"> Accepter</button>
                     </div>
-                    <div class="div_center">
+                    <div class="div_centre">
                         <button type="submit"> Refuser</button>
                     </div>
                 </fieldset>
@@ -86,7 +86,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/connexiondb.php';
                     <div>
                         <textarea id="Message" rows="10" , cols="50">Mon avis:</textarea>
                     </div>
-                    <div class="div_center">
+                    <div class="div_centre">
                         <button type="submit"> Envoyer</button>
                     </div>
                 </fieldset>

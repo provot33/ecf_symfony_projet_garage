@@ -26,31 +26,31 @@ function alimenteCommentaires($number, $nom, $prenom, $courriel, $note, $avis, $
     if ($est_valide || $admin){
         
         $commentaire = '<fieldset>';
-        $commentaire .= '<div class="formulaire_contact">
-                <div class="formulaire_label">
+        $commentaire .= '<div class="formulaire_contact div_centre">
+                <div class="formulaire_label div_droite">
                     <label for="nom'.$number.'">Nom : </label>
                 </div>
-                <div class="formulaire_champ">
+                <div class="formulaire_champ div_gauche">
                     '.$nom.'
                 </div>
             </div>';
-        $commentaire .= '<div class="formulaire_contact">
-                <div class="formulaire_label">
+        $commentaire .= '<div class="formulaire_contact div_centre">
+                <div class="formulaire_label div_droite">
                     <label for="prenom'.$number.'">Prenom : </label>
                 </div>
-                <div class="formulaire_champ">
+                <div class="formulaire_champ div_gauche">
                     '.$prenom.'
                 </div>
             </div>';
-        $commentaire .= '<div class="formulaire_contact">
-                <div class="formulaire_label">
+        $commentaire .= '<div class="formulaire_contact div_centre">
+                <div class="formulaire_label div_droite">
                     <label for="courriel'.$number.'"><i class="bi bi-envelope-fill"></i></label>
                 </div>
-                <div class="formulaire_champ">
+                <div class="formulaire_champ div_gauche">
                     '.($admin ? $courriel : strtok($courriel, '@').'@****').
                 '</div>
             </div>';
-        $commentaire .= '<div class="feedback formulaire_contact">
+        $commentaire .= '<div class="feedback formulaire_contact div_centre">
             <label class="angry">
             <input type="radio" value="1" name="feedback'.$number.'" '.($note == 1 ? 'checked' : '').' />
             <div>
@@ -95,26 +95,26 @@ function alimenteCommentaires($number, $nom, $prenom, $courriel, $note, $avis, $
                 <path d="M1,5.5 C3.66666667,2.5 6.33333333,1 9,1 C11.6666667,1 14.3333333,2.5 17,5.5"></path>
             </symbol>
         </svg>';
-        $commentaire .= '<div class="formulaire_deux_colonnes">
-                <textarea id="avis'.$number.'" rows="10" , cols="40">'.$avis.'</textarea>
+        $commentaire .= '<div class="formulaire_contact div_centre">
+                <textarea id="avis'.$number.'" rows="10" , cols="34">'.$avis.'</textarea>
             </div>';
         if ($admin) {
             if ($est_valide){
-                $commentaire .= '<div class="formulaire_label">
+                $commentaire .= '<div class="formulaire_label div_centre">
                         <label for="est_valide'.$number.'">Commentaire validé</label>
                     </div>';
             }
             else {
-                $commentaire .= '<div class="formulaire_contact" id="formulaire_erreurs'.$number.'">
+                $commentaire .= '<div class="formulaire_contact div_centre" id="formulaire_erreurs'.$number.'">
 
                     </div>
-                    <div id="boutonValider'.$number.'" class="div_center">
+                    <div id="boutonValider'.$number.'" class="div_centre">
                         <button type="submit" onclick="validerCommentaire('.$number.','.$identifiant.')">Valider l\'avis</button>
                     </div>';
             }
 
         }
-        $commentaire .= '</fieldset><br />';
+        $commentaire .= '</fieldset>';
     }
     return $commentaire;
 }

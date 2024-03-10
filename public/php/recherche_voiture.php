@@ -94,7 +94,7 @@ try {
     foreach ($pdo->query('SELECT * FROM VEHICULE', PDO::FETCH_ASSOC) as $vehicule) {
         echo '<div class="card"><div class="card-inner"><div class="card-front"><div class="card-content">';
         echo '<h2>'.$vehicule['MARQUE'].' '.$vehicule['MODELE'].'</h2>';
-        echo '<img src="'.$vehicule['URLMINIATURE'].'" alt="visuel vehicule">';
+        echo '<img class="img_card" src="'.$vehicule['URLMINIATURE'].'" alt="visuel vehicule">';
         echo '<h2>'.number_format($vehicule['KILOMETRAGE'], 0, ',', ' ').' km</h2>';
         echo '<h2>'.$vehicule['MOTORISATION'].'</h2>';
         echo '<h2>'.number_format($vehicule['PRIX'], 0, ',', ' ').' €</h2>';

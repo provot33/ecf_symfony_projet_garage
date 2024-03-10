@@ -67,7 +67,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/php/commons/header_authent.php');
 
         </div>
         </div>
-        <div id="boutonCreerSalarie" class="div_center">
+        <div id="boutonCreerSalarie" class="div_centre">
           <button type="submit">Créer le salarié</button>
         </div>
       </fieldset>

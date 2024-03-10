@@ -56,7 +56,7 @@ try {
         <br>
 
         <!-- The dots/circles -->
-        <div class="div_center">
+        <div class="div_centre">
 <?php 
     echo '<span class="dot dot-actif" onclick="currentSlide(1)"></span>';
     for ($i = 2; $i <= $nbPhotos; $i++ ){
@@ -65,7 +65,7 @@ try {
 ?>
         </div>
 
-        <div class="div_center div_pane">
+        <div class="div_centre div_pane">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
                     <button class="nav-link active" onclick="openInfo(event, 'general')">Général</button >

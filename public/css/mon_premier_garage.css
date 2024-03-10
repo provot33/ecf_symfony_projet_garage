@@ -37,8 +37,17 @@ table {
     }
 }
 
-.h2_center,
-legend {
+.h2_center{
+    text-align: center;
+}
+
+
+legend{
+    margin-top: 6px;
+    margin-left: 5px; 
+    padding: 2px; 
+    width:calc(100% - 20px);
+    box-sizing:content-box;
     text-align: center;
 }
 
@@ -55,6 +64,21 @@ legend {
     color: #203E40;
 }
 
+button{
+    margin-bottom: 4px;
+}
+
+input,
+textarea,
+select,
+.dropdown-menu {
+    background-color: #E8BF76;
+}
+
+textarea{
+    resize: vertical;
+}
+
 
 button:hover,
 .btn:hover,
@@ -63,8 +87,19 @@ a:hover {
     color: #E8BF76
 }
 
-.div_center {
+.div_centre {
     text-align: center;
+    justify-content: center;
+}
+
+.div_gauche {
+    text-align: left;
+    justify-content: flex-start;
+}
+
+.div_droite {
+    text-align: right;
+    justify-content: flex-end;
 }
 
 .div_pane {
@@ -90,7 +125,6 @@ a:hover {
     font-style: normal;
 }
 
-
 p,
 li,
 article,
@@ -102,7 +136,6 @@ label,
     font-style: normal;
     text-align: justify;
     justify-content: center;
-
 }
 
 .nav-tabs {
@@ -121,20 +154,17 @@ img {
     border-style: solid;
 }
 
-/* .container{
-    display: flex;
-    position: relative;
-    flex-basis: auto;
-    flex-shrink: 20%;
-    flex-grow: 50%;
-} */
+.img_card {
+    max-height: 160px;
+    max-width: 200px;
+    border-color: #809FB0;
+    border-width: 3px;
+    border-style: solid;
+}
 
 .container_droite{
     display: flex;
     position: relative;
-    /* flex-basis: auto;
-    flex-shrink: 1;
-    flex-grow: 1; */
     flex-wrap: wrap;
     flex-direction: row;
 }
@@ -142,9 +172,6 @@ img {
 .container_gauche{
     display: flex;
     position: relative;
-    /* flex-basis: auto;
-    flex-shrink: 1;
-    flex-grow: 1; */
     flex-wrap: wrap;
     flex-direction: row-reverse;
 }
@@ -171,16 +198,12 @@ img {
     margin: auto;
 }
 
-textarea {
-    resize: vertical;
-    color: #E8BF76
-}
-
 fieldset {
     border-style: inset;
     border-radius: 1em;
     border-width: 2px;
     border-color: #203E40;
+    margin-bottom: 6px;
 }
 
 .portrait img {
@@ -260,15 +283,15 @@ fieldset {
 .formulaire_label {
     flex-direction: column;
     margin: 1%;
-    text-align: left;
+    /* text-align: left; */
     white-space: nowrap;
-    flex: 1;
+    flex: 5;
 }
 
 .formulaire_champ {
     flex-direction: column;
     margin: 1%;
-    flex: 2;
+    flex: 6;
 }
 
 .formulaire_deux_colonnes {
@@ -282,9 +305,7 @@ fieldset {
     margin: 0 auto;
     width: 200px;
     height: 320px;
-    /* perspective: 1000px; */
-    text-align: center;
-    
+    text-align: center;    
     background-color: #E8BF76;
 }
 
@@ -313,9 +334,7 @@ fieldset {
 }
 
 .card-front {
-    /* background-image:url('images/front.jpg'); */
     background-size: cover;
-    /* background-position:center center; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -343,7 +362,6 @@ fieldset {
 
 .card-back {
     transform: rotateY(180deg);
-    /* background:#F1A438; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -351,46 +369,9 @@ fieldset {
     background: linear-gradient(0deg, #F1A438, #E8BF76);
 }
 
-/* .card-back .card-image {
-    width:120px;
-    height:120px;
-    margin:0 auto;
-    border:solid 1px #809FB0;
-    border-radius:100%;
-    /* background-image:url('images/back.jpg');
-    background-size:cover;
-    /* background-position:center center;
-  } */
-
 .card-back p {
     margin-top: 2px;
 }
-
-/* .card-back .card-icons {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .card-back .card-icons a {
-    font-size:18px;
-    color:#E8BF76;
-    background:#809FB0;
-    width:42px;
-    height:42px;
-    border-radius:100%;
-    margin:8px;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    transition:opacity .2s;
-  } */
-
-/* .card-back .card-icons a:hover {
-    cursor:pointer;
-    opacity:0.7;
-  } */
 
 .card-front {
     transition: opacity .6s;

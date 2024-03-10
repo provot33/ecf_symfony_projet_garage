@@ -85,7 +85,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/connexiondb.php';
         <div class="formulaire_contact">
           <textarea id="Message" rows="10" , cols="40">Mon message:</textarea>
         </div>
-        <div class="div_center">
+        <div class="div_centre">
           <button type="submit"> Envoyer</button>
         </div>
       </fieldset>
@@ -182,7 +182,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/connexiondb.php';
         <div class="formulaire_deux_colonnes">
           <textarea id="Message" rows="10" , cols="40">Mon avis:</textarea>
         </div>
-        <div class="div_center">
+        <div class="div_centre">
           <button type="submit"> Envoyer</button>
         </div>
       </fieldset>
