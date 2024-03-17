@@ -56,8 +56,7 @@ try {
         </table>
         <hr>
 
-        <h2 class="h2_center"><a href="/php/formulaires_de_contact.php"><i class="bi bi-envelope-at"> </i>Laissez-nous un
-                commentaire!</a></h2>
+        <h2 class="h2_center"><a href="/php/formulaires_de_contact.php"><i class="bi bi-envelope-at"> </i>Contactez-nous !</a></h2>
         <h2 class="h2_center"><i class="bi bi-car-front-fill"></i> Garage V. Parrot <br>
 
 <?php

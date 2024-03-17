@@ -1,0 +1,34 @@
+.noUi-connect {
+    background: #E8BF76;
+}
+
+.noUi-connects {
+    background: #FAD58F;
+}
+
+.noUi-tooltip {
+    background: #E8BF76;
+}
+
+.noUi-touch-area {
+    background: #809FB0;
+    ;
+}
+
+.input_slider {
+    width: 120px;
+}
+
+.div_slider {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+}
+
+/* .noUi-tooltip {
+    display: none;
+}
+
+.noUi-active .noUi-tooltip {
+    display: block;
+} */

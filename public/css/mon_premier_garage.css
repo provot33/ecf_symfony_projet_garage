@@ -217,6 +217,10 @@ fieldset {
     text-align: center;
 }
 
+.element_barre {
+    margin-bottom:10px;
+}
+
 @media screen and (min-width: 900px) {
     .equipe {
         display: flex;
@@ -231,7 +235,26 @@ fieldset {
         flex-direction: column;
         width: 25%
     }
+
+    .barre_filtre {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: safe;
+        position: relative;
+    }
+
+    .element_barre {
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
 }
+
+.slider_filtre {
+    width: 300px;
+}
+
 
 .table_horaires {
     caption-side: top;
