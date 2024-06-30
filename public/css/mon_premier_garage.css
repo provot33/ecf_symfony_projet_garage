@@ -1,54 +1,49 @@
 body {
-    background-color: #F1A438;
-    margin-left: 2%;
-    margin-right: 2%;
-
+  background-color: #f1a438;
+  margin-left: 2%;
+  margin-right: 2%;
 }
 
 h1 {
-    font-family: 'karma', serif;
-    font-size: large;
-    color: #203E40;
-    text-align: center;
-
+  font-family: "karma", serif;
+  font-size: large;
+  color: #203e40;
+  text-align: center;
 }
 
 @media screen and (min-width: 900px) {
-    h1 {
-        font-size: x-large;
-
-    }
+  h1 {
+    font-size: x-large;
+  }
 }
 
 h2,
 caption,
 table {
-    font-family: 'athiti', sans-serif;
-    color: #203E40;
-    font-size: medium;
+  font-family: "athiti", sans-serif;
+  color: #203e40;
+  font-size: medium;
 }
 
 @media screen and (min-width: 900px) {
-
-    h2,
-    caption,
-    table {
-        font-size: x-large;
-    }
+  h2,
+  caption,
+  table {
+    font-size: large;
+  }
 }
 
-.h2_center{
-    text-align: center;
+.h2_center {
+  text-align: center;
 }
 
-
-legend{
-    margin-top: 6px;
-    margin-left: 5px; 
-    padding: 2px; 
-    width:calc(100% - 20px);
-    box-sizing:content-box;
-    text-align: center;
+legend {
+  margin-top: 6px;
+  margin-left: 5px;
+  padding: 2px;
+  width: calc(100% - 20px);
+  box-sizing: content-box;
+  text-align: center;
 }
 
 table,
@@ -57,72 +52,71 @@ hr,
 h1,
 button,
 legend {
-    background-color: #E8BF76;
-    border-width: 3px;
-    border-style: solid;
-    border-color: #809FB0;
-    color: #203E40;
+  background-color: #e8bf76;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #809fb0;
+  color: #203e40;
 }
 
-button{
-    margin-bottom: 4px;
+button {
+  margin-bottom: 4px;
 }
 
 input,
 textarea,
 select,
 .dropdown-menu {
-    background-color: #E8BF76;
+  background-color: #e8bf76;
 }
 
-textarea{
-    resize: vertical;
+textarea {
+  resize: vertical;
 }
-
 
 button:hover,
 .btn:hover,
 a:hover {
-    background-color: #809FB0;
-    color: #E8BF76
+  background-color: #809fb0;
+  color: #e8bf76;
 }
 
 .div_centre {
-    text-align: center;
-    justify-content: center;
+  text-align: center;
+  justify-content: center;
 }
 
 .div_gauche {
-    text-align: left;
-    justify-content: flex-start;
+  text-align: left;
+  justify-content: flex-start;
 }
 
 .div_droite {
-    text-align: right;
-    justify-content: flex-end;
+  text-align: right;
+  justify-content: flex-end;
 }
 
 .div_pane {
-    margin-bottom: 4px;
+  margin-bottom: 4px;
 }
 
 .karma-medium {
-    font-family: "Karma", serif;
-    font-weight: 500;
-    font-style: normal;
-    text-align: center;
+  font-family: "Karma", serif;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
 }
 
 .mukta-light {
-    font-family: "Mukta", sans-serif;
-    font-weight: 300;
-    font-style: normal;
+  font-family: "Mukta", sans-serif;
+  font-weight: 300;
+  font-style: normal;
 }
 
 .athiti-medium {
-    font-family: "Athiti", sans-serif;
-    font-weight: 500;
-    font-style: normal;
+  font-family: "Athiti", sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }
 
 p,
@@ -130,277 +124,341 @@ li,
 article,
 label,
 .nav-link.active {
-    font-size: medium;
-    color: #203E40 !important;
-    font-family: 'Mukta', sans serif;
-    font-style: normal;
-    text-align: justify;
-    justify-content: center;
+  font-size: medium;
+  color: #203e40 !important;
+  font-family: "Mukta", sans serif;
+  font-style: normal;
+  text-align: justify;
+  justify-content: center;
 }
 
 .nav-tabs {
-    border-bottom-color: #809FB0 !important;
+  border-bottom-color: #809fb0 !important;
 }
 .nav-link.active {
-    background-color: #E8BF76 !important;
-    border-color: #809FB0 !important;
+  background-color: #e8bf76 !important;
+  border-color: #809fb0 !important;
 }
 
 img {
-    /* max-height: 250px; */
-    max-width: 300px;
-    border-color: #809FB0;
-    border-width: 3px;
-    border-style: solid;
+  /* max-height: 250px; */
+  max-width: 300px;
+  border-color: #809fb0;
+  border-width: 3px;
+  border-style: solid;
 }
 
 .img_card {
-    max-height: 160px;
-    max-width: 200px;
-    border-color: #809FB0;
-    border-width: 3px;
-    border-style: solid;
+  max-height: 160px;
+  max-width: 200px;
+  border-color: #809fb0;
+  border-width: 3px;
+  border-style: solid;
 }
 
-.container_droite{
-    display: flex;
-    position: relative;
-    flex-wrap: wrap;
-    flex-direction: row;
+.container_droite {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
-.container_gauche{
-    display: flex;
-    position: relative;
-    flex-wrap: wrap;
-    flex-direction: row-reverse;
+.container_gauche {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
 }
 
 .texte-block {
-    position: relative;
-    padding-left: 10px;
-    padding-right: 10px;
-    flex-basis: 55em;
-    align-items: center;
+  position: relative;
+  padding-left: 10px;
+  padding-right: 10px;
+  flex-basis: 55em;
+  align-items: center;
 }
 
 .cadre_img {
-    margin: 4px;
-    display: flex;
-    flex: 1 1 auto;
-    align-items: center;
+  margin: 4px;
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
 }
 
 .texte_img {
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    margin: auto;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  margin: auto;
 }
 
 fieldset {
-    border-style: inset;
-    border-radius: 1em;
-    border-width: 2px;
-    border-color: #203E40;
-    margin-bottom: 6px;
+  border-style: inset;
+  border-radius: 1em;
+  border-width: 2px;
+  border-color: #203e40;
+  margin-bottom: 6px;
 }
 
 .portrait img {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  max-width: 200px;
 }
 
 .portrait article {
-    text-align: center;
+  text-align: center;
 }
 
 .element_barre {
-    margin-bottom:10px;
+  margin-bottom: 10px;
 }
 
 @media screen and (min-width: 900px) {
-    .equipe {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: safe;
-        position: relative;
-    }
+  .equipe {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: safe;
+    position: relative;
+  }
 
-    .portrait {
-        display: flex;
-        flex-direction: column;
-        width: 25%
-    }
+  .portrait {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+  }
 
-    .barre_filtre {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: safe;
-        position: relative;
-    }
+  .barre_filtre {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: safe;
+    position: relative;
+  }
 
-    .element_barre {
-        flex-direction: column;
-        align-items: center;
-        position: relative;
-    }
+  .element_barre {
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
 }
 
 .slider_filtre {
-    width: 300px;
+  width: 300px;
 }
 
-
 .table_horaires {
-    caption-side: top;
-    margin-left: auto;
-    margin-right: auto;
+  caption-side: top;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .listing {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    grid-gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 20px;
 }
 
 @media screen and (min-width: 900px) {
-    .listing {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr;
-        grid-gap: 20px;
-    }
+  .listing {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 20px;
+  }
 }
 .logo {
-    height: 150px;
-    width: 150px;
+  height: 150px;
+  width: 150px;
 }
 
 .navbar {
-    background-color: #F1A438 !important;
+  background-color: #f1a438 !important;
 }
 
 .liste_a_puces {
-    display: flex;
-
+  display: flex;
 }
 
 .prestations {
-    display: flex;
-
+  display: flex;
 }
 
 .formulaire_contact {
-    display: flex;
-    flex-direction: row;
-    margin: 1%;
+  display: flex;
+  flex-direction: row;
+  margin: 1%;
 }
 
 .formulaire_label {
-    flex-direction: column;
-    margin: 1%;
-    /* text-align: left; */
-    white-space: nowrap;
-    flex: 5;
+  flex-direction: column;
+  margin: 1%;
+  /* text-align: left; */
+  white-space: nowrap;
+  flex: 5;
 }
 
 .formulaire_champ {
-    flex-direction: column;
-    margin: 1%;
-    flex: 6;
+  flex-direction: column;
+  margin: 1%;
+  flex: 6;
 }
 
 .formulaire_deux_colonnes {
-    flex-direction: column;
-    columns: 2;
-    margin: 1%;
+  flex-direction: column;
+  columns: 2;
+  margin: 1%;
 }
 
 /* Contenu pour faire flipper la carte */
 .card {
-    margin: 0 auto;
-    width: 200px;
-    height: 320px;
-    text-align: center;    
-    background-color: #E8BF76;
+  margin: 0 auto;
+  width: 200px;
+  height: 320px;
+  text-align: center;
+  background-color: #e8bf76;
 }
 
 .card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
 }
 
 .card:hover .card-inner {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .card-front,
 .card-back {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    padding: 16px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px 0 #809FB0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 #809fb0;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
 }
 
 .card-front {
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    overflow: hidden;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.card-front-bottom {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  margin: auto;
 }
 
 .card-front:before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    background: linear-gradient(0deg, #F1A438, #E8BF76);
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  background: linear-gradient(0deg, #f1a438, #e8bf76);
 }
 
 .card-front .card-content {
-    z-index: 1;
-    color: #E8BF76;
+  z-index: 1;
+  color: #e8bf76;
 }
 
 .card-front .card-content p {
-    color: #E8BF76;
+  color: #e8bf76;
 }
 
 .card-back {
-    transform: rotateY(180deg);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(0deg, #F1A438, #E8BF76);
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(0deg, #f1a438, #e8bf76);
 }
 
 .card-back p {
-    margin-top: 2px;
+  margin-top: 2px;
 }
 
 .card-front {
-    transition: opacity .6s;
+  transition: opacity 0.6s;
 }
 
 .card:hover .card-front {
-    opacity: 0;
+  opacity: 0;
 }
 
 /* / Contenu pour faire flipper la carte */
+
+
+/* Gestion de la table salarié */
+.table_data {
+  table-layout: fixed;
+  width: 98%;
+  border-collapse: collapse;
+  border: 3px solid #6e0303;
+  /*background-color: #f5edb9;*/
+  text-align: center;
+  width: calc(100% - 10px);
+  box-sizing: content-box;
+  text-align: center;
+  margin-left: 4px;  
+}
+
+.th_data,
+.tr_data,
+.td_data {
+  border: 2px;
+  border-color: #6e0303;
+  border-style: solid;
+  /*background-color: #f5edb9;*/
+}
+
+.th_data,
+.td_data {
+  padding: 5px;
+}
+
+tbody .td_data {
+  text-align: center;
+}
+
+.td_data > input[type='text']
+{
+    width: 95%; /*this will set the width of the textbox equal to its container td*/
+}
+
+.bouton_table {
+  text-align:end;
+}
+
+.bouton_table input[type='button'] {
+  margin-top: 8px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+
+.message_erreur {
+  font-size: larger;
+  font-weight: bold;
+  color: #ff0000;
+}
