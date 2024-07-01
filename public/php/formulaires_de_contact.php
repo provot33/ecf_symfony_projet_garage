@@ -73,7 +73,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/connexiondb.php';
             <label for="objet_contact">Objet :</label>
           </div>
           <div class="formulaire_champ div_gauche">
-            <select name="objet_contact" id="objet_contact">
+            <select name="objet_contact" id="objet_contact" <?php echo(isset($_GET['vehicule'])) ? "disabled" : "";?> >
 <?php
 try {
     $i = 0;
@@ -91,6 +91,19 @@ try {
             </select>
           </div>
         </div>
+<?php
+if (isset($_GET['vehicule'])) {
+  echo '<div class="formulaire_contact div_centre">';
+  echo '<div class="formulaire_label div_droite">';
+  echo '<label for="reference">Référence Annonce : </label>';
+  echo '</div>';
+  echo '<input name="reference" id="refvehicule" type="hidden" value="'.$_GET['vehicule'].'">';
+  echo '<div class="formulaire_champ div_gauche">';
+  echo '<label for="reference">REF_'.sprintf("%06d", $_GET['vehicule']).'</label>';
+  echo '</div>';
+  echo '</div>';
+}
+?>
         <div class="formulaire_contact div_centre">
           <textarea name="message" id="message" rows="10" , cols="34" placeholder="Mon message :"></textarea>
         </div>

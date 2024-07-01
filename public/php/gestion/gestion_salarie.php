@@ -5,7 +5,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/verification_session.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/verification_roles.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/tools.php';
 ?>
-
+<!DOCTYPE html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -99,8 +100,8 @@ foreach ($pdo->query('SELECT * FROM PERSONNEL', PDO::FETCH_ASSOC) as $personnel)
         <!-- <div id="boutonRetour" class="div_centre" style="display:none">
           <button onclick="window.location.href='/';">Retour à l'accueil</button>
         </div> -->
-      </fieldset>
-</form>
+      <!-- </fieldset>
+    </form> -->
 
 <hr />
 <?php

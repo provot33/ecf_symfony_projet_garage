@@ -4,24 +4,15 @@ include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/connexiondb.php';
 // Démarrage de la session
 session_start();
 
-// echo(" Session - LOGIN : ".$_SESSION['LOGIN']);
-// echo(" Session - PASSWORD : ".$_SESSION['PASSWORD']);
-
 // On vérifie si le champ Login n'est pas vide.
-
 if (!isset($_SESSION['LOGIN'])) {
 // Si c'est le cas, le visiteur ne s'est pas connecter et subit une redirection
-    // echo("Redirection utilisateur non connu");
     Header('Location:/php/login/connexion.php');
     exit;
-// } else {
-//     echo "  <a href src='Disconnect.php'> Se déconnecter </a> || Utilisateur: " . $_SESSION['LOGIN'] . "";
 }
 
 $requete ="SELECT PASSWORD('".$_SESSION['PASSWORD']."') AS PASSCRYPT";
 $passEncrypt = $pdo->query($requete)->fetch()['PASSCRYPT'];
-
-// echo("Mot de passe crypté : ".$passEncrypt);
 
 $checkUser = false;
 
@@ -31,9 +22,7 @@ $requete = "SELECT NOM, PRENOM, ADRESSE_COURRIEL, MOT_DE_PASSE, EST_ADMINISTRATE
 $ligneUser = $pdo->query($requete, PDO::FETCH_ASSOC)->fetch();
 
 if (isset($ligneUser['MOT_DE_PASSE'])){
-    // echo("Mot de passe de l'utilisateur : ".$ligneUser['MOT_DE_PASSE']);
     if ($passEncrypt == $ligneUser['MOT_DE_PASSE']) {
-        // echo(" Utilisateur reconnu");
         $checkUser = true;
     }
 }

@@ -8,13 +8,6 @@ VALUES ('".htmlspecialchars($_POST['nom'])."', '".htmlspecialchars($_POST['preno
 .htmlspecialchars($_POST['email'])."', '".htmlspecialchars($_POST['telephone'])."', "
 .$_POST['objet_contact'].", '".htmlspecialchars($_POST['message'])."')";
 
-//echo $sql."<br/><br/>";
-//$result = $pdo->query($sql, PDO::FETCH_ASSOC);
-//echo $result;
-//echo "<br/<br/>";
-//echo $result->rowCount();
-//echo "<br/<br/>";
-
 if ($pdo->query($sql, PDO::FETCH_ASSOC)) {
     // Le traitement est un succès
     http_response_code(200);

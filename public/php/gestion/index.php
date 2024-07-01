@@ -29,67 +29,33 @@ include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/header_authent.php';
     <h1>VOUS ETES GESTIONNAIRE DU SITE</h1>
     <main>
         <h1> Un service de carrosserie de premier ordre </h1>
-        <section>
-            <div class="container_droite">
-                <div class="texte-block">
-                    <P>Bienvenue chez notre service carrossier peintre automobile expert,
-                        un nom synonyme de qualité et d’expertise dans le domaine de la carrosserie.</p>
-                    <p>Ouverts depuis 3 ans, nous vous proposons une large gamme de services personnalisés et de qualité:</p>
-
-                    <div class="liste_a_puces">
-                        <ul>
-                            <li> réparation de votre carrosserie</li>
-                            <li> réparation de la mécanique voiture</li>
-                            <li> entretien régulier de votre véhicule gage de performance et sécurité</li>
-                            <li> contrôles techniques</li>
-                            <li>vente de véhicules d'occasion</li>
-                        </ul>
-
-                    </div>
-                </div>
-                <div class="cadre_img">
-                        <img class="texte_img" src="/assets/photo voiture à vendre/cleaning-1837331_640.jpg" alt="bras d'un garagiste qui s'occupe de la carrosserie d'une voiture">
-                </div>
-            </div>
+        <section id="section1" data-tiny-editor>
+<?php
+    echo $pdo->query('SELECT ZONE_SITE1 FROM CONTENU_SITE WHERE IDENTIFIANT = 1', PDO::FETCH_ASSOC)->fetch()['ZONE_SITE1'];
+?>            
         </section>
-        <section>
-            <div class="container_gauche">
-                <div class="texte-block">
-                    <p>Notre équipe de carrossiers passionnés possède une connaissance approfondie de tous les types de véhicules,
-                        assurant ainsi une réparation de première classe pour votre voiture. </p>
-                    <div class="prestations">
-                        <ul>
-                            <li> Du léger enfoncement à la restructuration de l'auto sur marbre</li>
-                            <li> De la rayure à la peinture complète</li>
-                            <li> Du léger enfoncement à la restructuration de l'auto sur marbre</li>
-                            <li> De la réparation au remplacement</li>
-                        </ul>
-                    </div>
-                </div>      
-                <div class="cadre_img">
-                    <img class="texte_img" src="/assets/photo voiture à vendre/crashed-car-2727666_640.jpg" alt="voiture accidentée à l'avant">
-                </div>
-            </div>
+        <div class="bouton_table">
+            <input id="cancelSection1" type="button" value="Annuler" />
+            <input id="updateSection1" type="button" value="Enregistrer" />
+        </div>
+        <section id="section2" data-tiny-editor>
+<?php
+    echo $pdo->query('SELECT ZONE_SITE2 FROM CONTENU_SITE WHERE IDENTIFIANT = 1', PDO::FETCH_ASSOC)->fetch()['ZONE_SITE2'];
+?>            
         </section>
-        <section>
-            <div class="container_droite">
-                <div class="texte-block">
-                    <p> Nous prenons en charge toutes les marques de véhicules et offrons des prestations d’entretien et de la
-                        mécanique auto et de rénovation.</p>
-                    <p>De plus, nous proposons également une location de voitures de courtoisie pour minimiser les perturbations
-                        pendant les périodes d’entretien. Choisissez notre service pour une expérience professionnelle hors pair
-                        dans le domaine de la carrosserie</p>
-                    <p>Nous fournissons une garantie complète sur toutes nos réparations d’automobiles pour vous donner une
-                        tranquillité d’esprit totale. Que ce soit une occasion spéciale ou un entretien régulier, notre numéro est
-                        toujours prêt à prendre votre appel.</p>
-                    <p> Envie de changer de voiture: notre garage vous propose des voitures d'occasion entiérement contrôlés avant
-                        la vente, gage de notre sérieux et de nos prestations de qualité</p>
-                </div>
-                <div class="cadre_img">
-                    <img class="texte_img" src="/assets/photo voiture à vendre/ai-generated-8367769_640.jpg" alt=" homme qui se penche sur une voiture ancienne">
-                </div>
-            </div>
+        <div class="bouton_table">
+            <input id="cancelSection2" type="button" value="Annuler" />
+            <input id="updateSection2" type="button" value="Enregistrer" />
+        </div>
+        <section id="section3" data-tiny-editor>
+<?php
+    echo $pdo->query('SELECT ZONE_SITE3 FROM CONTENU_SITE WHERE IDENTIFIANT = 1', PDO::FETCH_ASSOC)->fetch()['ZONE_SITE3'];
+?>            
         </section>
+        <div class="bouton_table">
+            <input id="cancelSection3" type="button" value="Annuler" />
+            <input id="updateSection3" type="button" value="Enregistrer" />
+        </div>
         <section>
             <p> Prenez contact par téléphone ou via notre formulaire pour un devis, une voiture qui vous interesse ou un
                 tarif</p>
@@ -114,6 +80,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/footer.php';
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/html/script.html';
 ?>
+<script src="https://unpkg.com/tiny-editor/dist/bundle.js"></script>
+<script src="/js/gestion_contenu.js"></script>
 </body>
 
 </html>

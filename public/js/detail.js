@@ -1,0 +1,1 @@
+document.getElementById("lien_contact").href += params;

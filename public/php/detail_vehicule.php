@@ -103,6 +103,7 @@ try {
             </div>
         </div>
     </main>
+    <h2 class="h2_center"><a href="/php/formulaires_de_contact.php<?php echo(isset($_GET['vehicule'])) ? '?vehicule='.$_GET['vehicule'] : '';?>"><i class="bi bi-envelope-at"></i> Contactez-nous à propos de ce véhicule</a></h2>
     <hr />
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/footer.php';
@@ -110,9 +111,13 @@ include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/footer.php';
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/html/script.html';
 ?>
+    <!-- <script src="/node_modules/bootstrap/js/src/tab.js"></script> -->
     <script src="/js/slideshow.js"></script>
     <script src="/js/tab.js"></script>
-    <script src="/node_modules/bootstrap/js/src/tab.js"></script>
+<?php
+    echo '<script>const params="?vehicule='.$_GET['vehicule'].'"</script>';
+?>
+    <script src="/js/detail.js"></script>
 </body>
 
 </html>

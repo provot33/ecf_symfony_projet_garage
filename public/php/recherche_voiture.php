@@ -137,36 +137,6 @@ try {
     <hr />
     <main>
         <nav class="listing" id="liste_cartes">
-<?php
-// try {
-//     $i = 0;
-//     // On récupère les véhicules présents dans la table
-//     foreach ($pdo->query('SELECT * FROM VEHICULE', PDO::FETCH_ASSOC) as $vehicule) {
-//         echo '<div class="card"><div class="card-inner"><div class="card-front"><div class="card-content">';
-//         echo '<h2>'.$vehicule['MARQUE'].' '.$vehicule['MODELE'].'</h2>';
-//         echo '<img class="img_card" src="'.$vehicule['URLMINIATURE'].'" alt="visuel vehicule">';
-//         echo '<h2>'.number_format($vehicule['KILOMETRAGE'], 0, ',', ' ').' km</h2>';
-//         echo '<h2>'.$vehicule['MOTORISATION'].'</h2>';
-//         echo '<h2>'.number_format($vehicule['PRIX'], 0, ',', ' ').' €</h2>';
-//         echo '</div></div><div class="card-back"><h2>Equipements</h2>';
-//         echo '<p>'.$vehicule['MISE_EN_AVANT1'].'</p>';
-//         echo '<p>'.$vehicule['NOMBRE_DE_PORTES'].' portes</p>';
-//         echo '<p>'.$vehicule['MISE_EN_AVANT2'].'</p>';
-//         echo '<p>'.$vehicule['MISE_EN_AVANT3'].'</p>';
-//         if ($vehicule['MISE_EN_AVANT4'] !== null){
-//             echo '<p>'.$vehicule['MISE_EN_AVANT4'].'</p>';
-//         }
-//         if ($vehicule['MISE_EN_AVANT5'] !== null){
-//             echo '<p>'.$vehicule['MISE_EN_AVANT5'].'</p>';
-//         }
-//         echo '<p>'.$vehicule['ANNEE'].'</p>';
-//         echo '<a href="/php/detail_vehicule.php?vehicule='.$vehicule['IDENTIFIANT'].'">Plus de détails</a>';
-//         echo '</div></div></div>';
-//     }
-// } catch (PDOException $e) {
-
-// }
-?> 
         </nav>
         <hr />
     </main>
@@ -184,7 +154,7 @@ try {
     echo '<script>';
     echo 'const vehicules = [';
     $premierElem = true;
-    // On récupère les véhicules présents dans la table
+    // On récupère les véhicules présents dans la table et on alimente le javascript pour permettre de filtrer
     foreach ($pdo->query('SELECT * FROM VEHICULE', PDO::FETCH_ASSOC) as $vehicule) {
         if ($premierElem) {
             $premierElem = false;
@@ -208,7 +178,9 @@ try {
 
 }
 ?>
-<script src="/js/recherche_vehicule.js"></script>
+<script src="/js/recherche_vehicule.js">
+    alimenteListing(ajouteCarte(vehicule));
+</script>
 </body>
 
 </html>

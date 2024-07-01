@@ -48,7 +48,7 @@ VALUES ("Heinchtaine", "Albert", "a.heinchtaine@garage.parrot.fr", PASSWORD("a.h
 -- ------------- TABLE DES VEHICULES ---------------
 
 CREATE TABLE IF NOT EXISTS VEHICULE(
-   IDENTIFIANT			INT			   NOT NULL PRIMARY KEY,
+   IDENTIFIANT			INT			   NOT NULL PRIMARY KEY AUTO_INCREMENT,
    MARQUE				VARCHAR(50)	   NOT NULL,
    MODELE				VARCHAR(50)	   NOT NULL,
    PRIX 				   INT 		      NOT NULL,
@@ -68,23 +68,23 @@ CREATE TABLE IF NOT EXISTS VEHICULE(
    
 INSERT INTO VEHICULE
 (IDENTIFIANT, MARQUE, MODELE, PRIX, KILOMETRAGE, MOTORISATION, ANNEE, NOMBRE_DE_PORTES, URLMINIATURE, MISE_EN_AVANT1, MISE_EN_AVANT2, MISE_EN_AVANT3)
-VALUES (1, 'OPEL', 'CORSA', 30000, 35000, 'Diesel', 2016, 3, '/assets/photo voiture à vendre/opel/opel1.jpg', '4 places', 'TDI', 'Climatisation');
+VALUES ('OPEL', 'CORSA', 30000, 35000, 'Diesel', 2016, 3, '/assets/photo voiture à vendre/opel/opel1.jpg', '4 places', 'TDI', 'Climatisation');
 
 INSERT INTO VEHICULE
 (IDENTIFIANT, MARQUE, MODELE, PRIX, KILOMETRAGE, MOTORISATION, ANNEE, NOMBRE_DE_PORTES, URLMINIATURE, MISE_EN_AVANT1, MISE_EN_AVANT2, MISE_EN_AVANT3)
-VALUES (2, 'RENAULT', 'MEGANE', 41000, 65000, 'Essence', 2017, 5, '/assets/photo voiture à vendre/RENAULT CLIO ET MEGANE/MEGANE/megane2.jpg', '5 places', 'Intérieur "Premium"', 'Climatisation');
+VALUES ('RENAULT', 'MEGANE', 41000, 65000, 'Essence', 2017, 5, '/assets/photo voiture à vendre/RENAULT CLIO ET MEGANE/MEGANE/megane2.jpg', '5 places', 'Intérieur "Premium"', 'Climatisation');
 			
 INSERT INTO VEHICULE
 (IDENTIFIANT, MARQUE, MODELE, PRIX, KILOMETRAGE, MOTORISATION, ANNEE, NOMBRE_DE_PORTES, URLMINIATURE, MISE_EN_AVANT1, MISE_EN_AVANT2, MISE_EN_AVANT3)
-VALUES (3, 'RENAULT', 'CLIO', 19000, 12000, 'Essence', 2006, 3, '/assets/photo voiture à vendre/RENAULT CLIO ET MEGANE/CLIO/clio4.jpg', '4 places', 'Carnet d\'entretien', 'Non Fumeur');
+VALUES ('RENAULT', 'CLIO', 19000, 12000, 'Essence', 2006, 3, '/assets/photo voiture à vendre/RENAULT CLIO ET MEGANE/CLIO/clio4.jpg', '4 places', 'Carnet d\'entretien', 'Non Fumeur');
 						
 INSERT INTO VEHICULE
 (IDENTIFIANT, MARQUE, MODELE, PRIX, KILOMETRAGE, MOTORISATION, ANNEE, NOMBRE_DE_PORTES, URLMINIATURE, MISE_EN_AVANT1, MISE_EN_AVANT2, MISE_EN_AVANT3)
-VALUES (4, 'AUDI', 'QUATRO', 37000, 100000, 'Essence', 2016, 5, '/assets/photo voiture à vendre/voiture a/audi 1.jpg', '5 places', 'Familliale', 'Carbu Double Corps');
+VALUES ('AUDI', 'QUATRO', 37000, 100000, 'Essence', 2016, 5, '/assets/photo voiture à vendre/voiture a/audi 1.jpg', '5 places', 'Familliale', 'Carbu Double Corps');
 
 INSERT INTO VEHICULE
 (IDENTIFIANT, MARQUE, MODELE, PRIX, KILOMETRAGE, MOTORISATION, ANNEE, NOMBRE_DE_PORTES, URLMINIATURE, MISE_EN_AVANT1, MISE_EN_AVANT2, MISE_EN_AVANT3)
-VALUES (5, 'TESLA', 'MODEL-X', 50000, 110000, 'Electrique', 2016, 5, '/assets/photo voiture à vendre/voiture a/audi 1.jpg', '7 places', '0-100km en 5s', 'Attelage');
+VALUES ('TESLA', 'MODEL-X', 50000, 110000, 'Electrique', 2016, 5, '/assets/photo voiture à vendre/voiture a/audi 1.jpg', '7 places', '0-100km en 5s', 'Attelage');
 
 -- INSERT INTO VEHICULE
 -- VALUES (6, );
@@ -399,9 +399,9 @@ VALUES (6, 3);
 CREATE TABLE IF NOT EXISTS CONTENU_SITE(
    IDENTIFIANT		INT			NOT NULL PRIMARY KEY,
    ZONE_SITE1		TEXT		   NOT NULL,
-   ZONE_SITE2		TEXT		   NOT NULL,
-   ZONE_SITE3		TEXT		   NOT NULL,
-   ZONE_SITE4		TEXT		   NOT NULL
+   ZONE_SITE2		TEXT		   ,
+   ZONE_SITE3		TEXT		   ,
+   ZONE_SITE4		TEXT		   
 );
 
 -- Insertion des données

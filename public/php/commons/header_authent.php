@@ -14,10 +14,21 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/php/gestion/index.php">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/php/recherche_voiture.php">Gestion des
-                            Vehicules</a>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="./#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Gestion des Vehicules
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="nav-link" href="/php/gestion/gestion_vehicule.php">Rechercher un Véhicule</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="/php/gestion/ajout_vehicule.php">Ajouter un Vehicule</a>
+                            </li>
+                        </ul>
                     </li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="./#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
@@ -31,8 +42,8 @@
 <?php
     if ($ligneUser['EST_ADMINISTRATEUR']){
         echo '<li><hr class="dropdown-divider"></li>'.
-            '<li><a class="dropdown-item" href="/php/formulaires_de_contact.php">'.
-            'Créer un nouveau salarié</a></li>'.
+            '<li><a class="dropdown-item" href="/php/gestion/gestion_salarie.php">'.
+            'Gestion des Salariés</a></li>'.
             '<li><a class="dropdown-item" href="/php/gestion/gestion_horaires.php">'.
             'Gérer les horaires</a></li>';
     }
@@ -40,12 +51,6 @@
                         </ul>
                     </li>
                 </ul>
-
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Rechercher dans le site"
-                        aria-label="Search">
-                    <button class="btn" type="submit"><i class="bi bi-search"></i></button>
-                </form>
                 <p>
                     <button class="btn"><a href="/php/login/logout.php">Deconnexion</a></button>
                 </p>

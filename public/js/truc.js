@@ -103,7 +103,8 @@ document.getElementById("type_nbPortes").onchange = function(){
 
 // Gestion du filtrage
 
-function prepareListing(callback) {
+function alimenteListing(){
+    // alert ("On va alimenter le listing");
     document.getElementById("liste_cartes").innerHTML = "";
     let marqueSelectionnee = document.getElementById("type_marque");
     let energieSelectionnee = document.getElementById("type_energie");
@@ -112,31 +113,48 @@ function prepareListing(callback) {
     let prixMax = formatPrix.from(document.getElementById("prix-max").value);
     let kilometrageMin = formatKilometre.from(document.getElementById("kilometre-min").value);
     let kilometrageMax = formatKilometre.from(document.getElementById("kilometre-max").value);
+    // alert("Kilometrage \n"
+    //     +"Km min : " + kilometrageMin + " & Km max : " + kilometrageMax);
+    // alert("Marque selectionnee : " + marqueSelectionnee.value);
+    // alert(marqueSelectionnee.value !== "0");
+    // alert("Energie selectionnee : " + energieSelectionnee.value);
+    // alert(energieSelectionnee.value !== "0")
+    // alert("npPortes selectionnee : " + nbPortesSelectionnee.value);
+    // alert(nbPortesSelectionnee.value !== "0");
     vehicules.forEach(vehicule => {
         let ajouteVehicule = true;
         if (vehicule.prix < prixMin || vehicule.prix > prixMax ) {
+            // alert("Prix invalide\nVehicule : " + vehicule.prix +"\n"
+            //     +"Prix min : " + prixMin + " & Prix max : " + prixMax);
             ajouteVehicule = false;
         }
+        // alert ("Véhicule kilométrage : " + vehicule.kilometrage);
         if (vehicule.kilometrage < kilometrageMin || vehicule.kilometrage > kilometrageMax ) {
+            // alert("Kilometrage invalide\nVehicule : " + vehicule.kilometrage +"\n"
+            // +"Km min : " + kilometrageMin + " & Km max : " + kilometrageMax);
             ajouteVehicule = false;
         }
         if (ajouteVehicule && marqueSelectionnee.value !== "0"  ) {
             if (marqueSelectionnee.options[marqueSelectionnee.selectedIndex].text !== vehicule.marque){
+                // alert("Marque invalide\nVehicule : " + vehicule.marque + "\nVS : " + marqueSelectionnee.options[marqueSelectionnee.selectedIndex].text);
                 ajouteVehicule = false;
             }
         }
         if (ajouteVehicule && energieSelectionnee.value !== "0") {
             if (energieSelectionnee.options[energieSelectionnee.selectedIndex].text !== vehicule.motorisation){
+                // alert("Energie invalide");
                 ajouteVehicule = false;
             }
         }
         if (ajouteVehicule && nbPortesSelectionnee.value !== "0") {
             if (nbPortesSelectionnee.value !== vehicule.nbPortes){
+                // alert("NbPortes invalide");
                 ajouteVehicule = false;
             }
         }
         if (ajouteVehicule) {
-            callback.apply(this, [vehicule]);
+            // alert("Ajout d'une carte");
+            ajouteCarte(vehicule);
         }
     });
 };
@@ -164,42 +182,6 @@ function ajouteCarte(vehicule) {
     carte += '</div></div></div>';
 
     document.getElementById("liste_cartes").innerHTML += carte;
-};
-
-function ajouteCartePrive(vehicule) {
-    let carte = '<div class="card"><div class="card-inner"><div class="card-front"><div class="card-content">';
-    let referenceOffre = "";
-    let idVehicule = "" + vehicule.identifiant;
-    for (i=0; i < 6 - idVehicule.length; i++){
-        referenceOffre += "0";
-    }
-    referenceOffre += vehicule.identifiant;
-    carte += '<h2>REF_' + referenceOffre + '</h2>';
-    carte += '<h2>' + vehicule.marque + ' ' + vehicule.modele + '</h2>';
-    carte += '<img class="img_card" src="' + vehicule.urlMiniature + '" alt="visuel vehicule">';
-    carte += '<div class="card-front-bottom"><h2>' + formatKilometre.to(formatKilometre.from(vehicule.kilometrage)) + '</h2>';
-    carte += '<h2>' + vehicule.motorisation + '</h2>';
-    carte += '<h2>' + formatPrix.to(formatKilometre.from(vehicule.prix)) + '</h2></div>';
-    carte += '</div></div><div class="card-back"><h2>Equipements</h2>';
-    carte += '<p>' + vehicule.miseEnAvant1 + '</p>';
-    carte += '<p>' + vehicule.nbPortes + ' portes</p>';
-    carte += '<p>' + vehicule.miseEnAvant2 + '</p>';
-    carte += '<p>' + vehicule.miseEnAvant3 + '</p>';
-    if (vehicule.miseEnAvant4 !== null){
-        carte += '<p>' + vehicule.miseEnAvant4 + '</p>';
-    }
-    if (vehicule.miseEnAvant5 !== null){
-        carte += '<p>' + vehicule.miseEnAvant5 + '</p>';
-    }
-    carte += '<p>' + vehicule.annee + '</p>';
-    carte += '<a href="/php/gestion/detail_vehicule.php?vehicule=' + vehicule.identifiant + '">Plus de détails</a>';
-    carte += '</div></div></div>';
-
-    document.getElementById("liste_cartes").innerHTML += carte;
-};
-
-function alimenteListing() {
-    prepareListing(ajouteCarte);
 };
 
 alimenteListing();
