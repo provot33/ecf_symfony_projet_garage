@@ -48,6 +48,9 @@ form.addEventListener("submit", (event) => {
     donneesManqantes = true;
   }
 
+  // alert ("Objet_contact vaut : " + form['objet_contact'].value);
+  form['id_sujet'].value = form['objet_contact'].value;
+
   if (donneesManqantes) {
     let message = "<p>Le formulaire n'est pas valide<br /><ul>";
     erreurs.forEach((element) => {
@@ -63,22 +66,22 @@ form.addEventListener("submit", (event) => {
       body: formData,
     })
       .then((response) => {
-        alert (response.status);
+        // alert (response.status);
         if (response.ok) {
           // Handle the successful response
           document.getElementById("boutonEnvoyer").style.display= "none";
           document.getElementById("boutonRetour").style.display= "block";
           document.getElementById("formulaire_erreurs").innerHTML = "Le formulaire a été envoyée";
-          alert("Reponse OK !");
+          // alert("Reponse OK !");
         } else {
           document.getElementById("formulaire_erreurs").innerHTML = "Impossible de transférer le formulaire - Réessayer ulétrieurement";
-          alert("Reponse KO !");
+          // alert("Reponse KO !");
           // Handle the error
         }
       })
       .catch((error) => {
         document.getElementById("formulaire_erreurs").innerHTML = "Impossible de transférer le formulaire - Réessayer ulétrieurement";
-        alert("Reponse Erreur !");
+        // alert("Reponse Erreur !");
         // Handle the error
       });
   }

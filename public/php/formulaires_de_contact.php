@@ -73,13 +73,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/connexiondb.php';
             <label for="objet_contact">Objet :</label>
           </div>
           <div class="formulaire_champ div_gauche">
+            <input type="hidden" name="id_sujet" id="id_sujet" value=""/>
             <select name="objet_contact" id="objet_contact" <?php echo(isset($_GET['vehicule'])) ? "disabled" : "";?> >
 <?php
 try {
     $i = 0;
-    // Alimentation de la combe des sujets de contact.
+    // Alimentation de la combo des sujets de contact.
     foreach ($pdo->query('SELECT IDENTIFIANT, LIBELLE_SUJET FROM SUJET_CONTACT WHERE IDENTIFIANT < 2000000 ORDER BY LIBELLE_SUJET ASC', PDO::FETCH_ASSOC) as $sujet) {
-        echo '<option value="'.$sujet['IDENTIFIANT'].'">'.$sujet['LIBELLE_SUJET'].'</option>';
+        echo '<option value="'.$sujet['IDENTIFIANT'].'"' . ((isset($_GET['vehicule']) && $sujet['IDENTIFIANT'] == 1) ? 'selected=""' : '') . '>'.$sujet['LIBELLE_SUJET'].'</option>';
         $i++;
     }
     echo '<option disabled>──────────────────</option>';
