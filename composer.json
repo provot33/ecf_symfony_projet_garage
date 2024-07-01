@@ -18,7 +18,8 @@
     "config": {
         "allow-plugins": {
             "php-http/discovery": true,
-            "symfony/runtime": true
+            "symfony/runtime": true,
+            "symfony/flex": false
         },
         "sort-packages": true
     },
