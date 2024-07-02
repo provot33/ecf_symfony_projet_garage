@@ -29,33 +29,49 @@ include $_SERVER['DOCUMENT_ROOT'] . '/php/commons/header_authent.php';
     <h1>VOUS ETES GESTIONNAIRE DU SITE</h1>
     <main>
         <h1> Un service de carrosserie de premier ordre </h1>
-        <section id="section1" data-tiny-editor>
 <?php
+    if ($ligneUser['EST_ADMINISTRATEUR']){        
+        echo '<section id="section1" data-tiny-editor>';
+    }else {
+        echo '<section id="section1">';
+    }
     echo $pdo->query('SELECT ZONE_SITE1 FROM CONTENU_SITE WHERE IDENTIFIANT = 1', PDO::FETCH_ASSOC)->fetch()['ZONE_SITE1'];
 ?>            
         </section>
-        <div class="bouton_table">
-            <input id="cancelSection1" type="button" value="Annuler" />
-            <input id="updateSection1" type="button" value="Enregistrer" />
-        </div>
-        <section id="section2" data-tiny-editor>
 <?php
+    if ($ligneUser['EST_ADMINISTRATEUR']){        
+        echo '<div class="bouton_table">';
+        echo '<input id="cancelSection1" type="button" value="Annuler" />';
+        echo '<input id="updateSection1" type="button" value="Enregistrer" />';
+        echo '</div>';        
+        echo '<section id="section2" data-tiny-editor>';
+    }else {
+        echo '<section id="section2">';
+    }
     echo $pdo->query('SELECT ZONE_SITE2 FROM CONTENU_SITE WHERE IDENTIFIANT = 1', PDO::FETCH_ASSOC)->fetch()['ZONE_SITE2'];
 ?>            
         </section>
-        <div class="bouton_table">
-            <input id="cancelSection2" type="button" value="Annuler" />
-            <input id="updateSection2" type="button" value="Enregistrer" />
-        </div>
-        <section id="section3" data-tiny-editor>
 <?php
+    if ($ligneUser['EST_ADMINISTRATEUR']){        
+        echo '<div class="bouton_table">';
+        echo '<input id="cancelSection2" type="button" value="Annuler" />';
+        echo '<input id="updateSection2" type="button" value="Enregistrer" />';
+        echo '</div>';        
+        echo '<section id="section3" data-tiny-editor>';
+    }else {
+        echo '<section id="section3">';
+    }
     echo $pdo->query('SELECT ZONE_SITE3 FROM CONTENU_SITE WHERE IDENTIFIANT = 1', PDO::FETCH_ASSOC)->fetch()['ZONE_SITE3'];
 ?>            
         </section>
-        <div class="bouton_table">
-            <input id="cancelSection3" type="button" value="Annuler" />
-            <input id="updateSection3" type="button" value="Enregistrer" />
-        </div>
+<?php
+    if ($ligneUser['EST_ADMINISTRATEUR']){        
+        echo '<div class="bouton_table">';
+        echo '<input id="cancelSection3" type="button" value="Annuler" />';
+        echo '<input id="updateSection3" type="button" value="Enregistrer" />';
+        echo '</div>';
+    }
+?>
         <section>
             <p> Prenez contact par téléphone ou via notre formulaire pour un devis, une voiture qui vous interesse ou un
                 tarif</p>
